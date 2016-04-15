@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-04-15T13:21:46.878Z</updated>
+  <updated>2016-04-15T14:13:14.397Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="http://yoursite.com/2016/04/15/ready/"/>
+    <id>http://yoursite.com/2016/04/15/ready/</id>
+    <published>2016-04-15T14:12:38.586Z</published>
+    <updated>2016-04-15T14:13:14.397Z</updated>
+    
+    <content type="html">&lt;h1 id=&quot;ready-与onload的区别&quot;&gt;&lt;a href=&quot;#ready-与onload的区别&quot; class=&quot;headerlink&quot; title=&quot;ready()与onload的区别&quot;&gt;&lt;/a&gt;ready()与onload的区别&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;1.onload没有简写形式,ready具有简写形式，简写形式如下:&lt;/strong&gt;  &lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$(document).ready(function(){})   
+$().ready(function(){}) 
+$(function(){})
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;2.&amp;nbsp;onload必须等待HTML页面中所有内部都加载完毕后才执行；ready是等待DOM节点树的内容加载完毕后就执行&lt;/strong&gt;  &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;3.&amp;nbsp;一个HTML页面只能编写一个onload；但是一个HTML页面允许编写多个ready&lt;/strong&gt;  &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;注：可以利用此制作页面加载转圈效果&lt;/strong&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;ready-与onload的区别&quot;&gt;&lt;a href=&quot;#ready-与onload的区别&quot; class=&quot;headerlink&quot; title=&quot;ready()与onload的区别&quot;&gt;&lt;/a&gt;ready()与onload的区别&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;1.on
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
