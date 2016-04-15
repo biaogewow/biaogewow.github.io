@@ -245,56 +245,11 @@
       <input type="hidden" class="isFancy" />
     
     
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h1 id="ready-与onload的区别"><a href="#ready-与onload的区别" class="headerlink" title="ready()与onload的区别"></a>ready()与onload的区别</h1><p><strong>1.onload没有简写形式,ready具有简写形式，简写形式如下:</strong>  </p>
-<pre><code>$(document).ready(function(){})   
-$().ready(function(){}) 
-$(function(){})
-</code></pre><p><strong>2.&nbsp;onload必须等待HTML页面中所有内部都加载完毕后才执行；ready是等待DOM节点树的内容加载完毕后就执行</strong>  </p>
-<p><strong>3.&nbsp;一个HTML页面只能编写一个onload；但是一个HTML页面允许编写多个ready</strong>  </p>
-<p><strong>注：可以利用此制作页面加载转圈效果</strong></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/04/15/hello-world/" class="article-date">
-      <time datetime="2016-04-15T13:21:46.878Z" itemprop="datePublished">2016-04-15</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/15/hello-world/">Hello World</a>
+      <a class="article-title" href="/2016/04/15/ready/">ready()与onload的区别</a>
     </h1>
   
 
@@ -304,16 +259,10 @@ $(function(){})
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
+        <h3 id="1-onload没有简写形式-ready具有简写形式，简写形式如下"><a href="#1-onload没有简写形式-ready具有简写形式，简写形式如下" class="headerlink" title="1.onload没有简写形式,ready具有简写形式，简写形式如下:"></a>1.onload没有简写形式,ready具有简写形式，简写形式如下:</h3><pre><code>$(document).ready(function(){})   
+$().ready(function(){}) 
+$(function(){})
+</code></pre><h3 id="2-nbsp-onload必须等待HTML页面中所有内部都加载完毕后才执行；ready是等待DOM节点树的内容加载完毕后就执行"><a href="#2-nbsp-onload必须等待HTML页面中所有内部都加载完毕后才执行；ready是等待DOM节点树的内容加载完毕后就执行" class="headerlink" title="2.&nbsp;onload必须等待HTML页面中所有内部都加载完毕后才执行；ready是等待DOM节点树的内容加载完毕后就执行"></a>2.&nbsp;onload必须等待HTML页面中所有内部都加载完毕后才执行；ready是等待DOM节点树的内容加载完毕后就执行</h3><h3 id="3-nbsp-一个HTML页面只能编写一个onload；但是一个HTML页面允许编写多个ready"><a href="#3-nbsp-一个HTML页面只能编写一个onload；但是一个HTML页面允许编写多个ready" class="headerlink" title="3.&nbsp;一个HTML页面只能编写一个onload；但是一个HTML页面允许编写多个ready"></a>3.&nbsp;一个HTML页面只能编写一个onload；但是一个HTML页面允许编写多个ready</h3><h3 id="注：可以利用此制作页面加载转圈效果"><a href="#注：可以利用此制作页面加载转圈效果" class="headerlink" title="注：可以利用此制作页面加载转圈效果"></a>注：可以利用此制作页面加载转圈效果</h3>
       
     </div>
     

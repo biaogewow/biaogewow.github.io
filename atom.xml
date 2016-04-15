@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-04-15T14:13:14.397Z</updated>
+  <updated>2016-04-15T15:58:24.053Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,51 +16,20 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title></title>
+    <title>ready()与onload的区别</title>
     <link href="http://yoursite.com/2016/04/15/ready/"/>
     <id>http://yoursite.com/2016/04/15/ready/</id>
     <published>2016-04-15T14:12:38.586Z</published>
-    <updated>2016-04-15T14:13:14.397Z</updated>
+    <updated>2016-04-15T15:58:24.053Z</updated>
     
-    <content type="html">&lt;h1 id=&quot;ready-与onload的区别&quot;&gt;&lt;a href=&quot;#ready-与onload的区别&quot; class=&quot;headerlink&quot; title=&quot;ready()与onload的区别&quot;&gt;&lt;/a&gt;ready()与onload的区别&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;1.onload没有简写形式,ready具有简写形式，简写形式如下:&lt;/strong&gt;  &lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;$(document).ready(function(){})   
+    <content type="html">&lt;h3 id=&quot;1-onload没有简写形式-ready具有简写形式，简写形式如下&quot;&gt;&lt;a href=&quot;#1-onload没有简写形式-ready具有简写形式，简写形式如下&quot; class=&quot;headerlink&quot; title=&quot;1.onload没有简写形式,ready具有简写形式，简写形式如下:&quot;&gt;&lt;/a&gt;1.onload没有简写形式,ready具有简写形式，简写形式如下:&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;$(document).ready(function(){})   
 $().ready(function(){}) 
 $(function(){})
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;2.&amp;nbsp;onload必须等待HTML页面中所有内部都加载完毕后才执行；ready是等待DOM节点树的内容加载完毕后就执行&lt;/strong&gt;  &lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;3.&amp;nbsp;一个HTML页面只能编写一个onload；但是一个HTML页面允许编写多个ready&lt;/strong&gt;  &lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;注：可以利用此制作页面加载转圈效果&lt;/strong&gt;&lt;/p&gt;
-</content>
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;2-nbsp-onload必须等待HTML页面中所有内部都加载完毕后才执行；ready是等待DOM节点树的内容加载完毕后就执行&quot;&gt;&lt;a href=&quot;#2-nbsp-onload必须等待HTML页面中所有内部都加载完毕后才执行；ready是等待DOM节点树的内容加载完毕后就执行&quot; class=&quot;headerlink&quot; title=&quot;2.&amp;nbsp;onload必须等待HTML页面中所有内部都加载完毕后才执行；ready是等待DOM节点树的内容加载完毕后就执行&quot;&gt;&lt;/a&gt;2.&amp;nbsp;onload必须等待HTML页面中所有内部都加载完毕后才执行；ready是等待DOM节点树的内容加载完毕后就执行&lt;/h3&gt;&lt;h3 id=&quot;3-nbsp-一个HTML页面只能编写一个onload；但是一个HTML页面允许编写多个ready&quot;&gt;&lt;a href=&quot;#3-nbsp-一个HTML页面只能编写一个onload；但是一个HTML页面允许编写多个ready&quot; class=&quot;headerlink&quot; title=&quot;3.&amp;nbsp;一个HTML页面只能编写一个onload；但是一个HTML页面允许编写多个ready&quot;&gt;&lt;/a&gt;3.&amp;nbsp;一个HTML页面只能编写一个onload；但是一个HTML页面允许编写多个ready&lt;/h3&gt;&lt;h3 id=&quot;注：可以利用此制作页面加载转圈效果&quot;&gt;&lt;a href=&quot;#注：可以利用此制作页面加载转圈效果&quot; class=&quot;headerlink&quot; title=&quot;注：可以利用此制作页面加载转圈效果&quot;&gt;&lt;/a&gt;注：可以利用此制作页面加载转圈效果&lt;/h3&gt;</content>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;ready-与onload的区别&quot;&gt;&lt;a href=&quot;#ready-与onload的区别&quot; class=&quot;headerlink&quot; title=&quot;ready()与onload的区别&quot;&gt;&lt;/a&gt;ready()与onload的区别&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;1.on
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="http://yoursite.com/2016/04/15/hello-world/"/>
-    <id>http://yoursite.com/2016/04/15/hello-world/</id>
-    <published>2016-04-15T13:21:46.878Z</published>
-    <updated>2016-04-15T13:21:46.878Z</updated>
-    
-    <content type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&quot;Quick-Start&quot;&gt;&lt;a href=&quot;#Quick-Start&quot; class=&quot;headerlink&quot; title=&quot;Quick Start&quot;&gt;&lt;/a&gt;Quick Start&lt;/h2&gt;&lt;h3 id=&quot;Create-a-new-post&quot;&gt;&lt;a href=&quot;#Create-a-new-post&quot; class=&quot;headerlink&quot; title=&quot;Create a new post&quot;&gt;&lt;/a&gt;Create a new post&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo new &lt;span class=&quot;string&quot;&gt;&quot;My New Post&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/writing.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Writing&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&quot;Run-server&quot;&gt;&lt;a href=&quot;#Run-server&quot; class=&quot;headerlink&quot; title=&quot;Run server&quot;&gt;&lt;/a&gt;Run server&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo server&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/server.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Server&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&quot;Generate-static-files&quot;&gt;&lt;a href=&quot;#Generate-static-files&quot; class=&quot;headerlink&quot; title=&quot;Generate static files&quot;&gt;&lt;/a&gt;Generate static files&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo generate&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/generating.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Generating&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&quot;Deploy-to-remote-sites&quot;&gt;&lt;a href=&quot;#Deploy-to-remote-sites&quot; class=&quot;headerlink&quot; title=&quot;Deploy to remote sites&quot;&gt;&lt;/a&gt;Deploy to remote sites&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo deploy&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/deployment.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Deployment&lt;/a&gt;&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+      &lt;h3 id=&quot;1-onload没有简写形式-ready具有简写形式，简写形式如下&quot;&gt;&lt;a href=&quot;#1-onload没有简写形式-ready具有简写形式，简写形式如下&quot; class=&quot;headerlink&quot; title=&quot;1.onload没有简写形式,ready具有简写形式
     
     </summary>
     
