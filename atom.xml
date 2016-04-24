@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-04-24T06:40:02.715Z</updated>
+  <updated>2016-04-24T07:13:39.873Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://yoursite.com/2016/04/24/each/"/>
     <id>http://yoursite.com/2016/04/24/each/</id>
     <published>2016-04-24T03:30:04.000Z</published>
-    <updated>2016-04-24T06:40:02.715Z</updated>
+    <updated>2016-04-24T07:13:39.873Z</updated>
     
     <content type="html">&lt;h3 id=&quot;隐式迭代-只关注迭代的开始和结束-不关注迭代过程&quot;&gt;&lt;a href=&quot;#隐式迭代-只关注迭代的开始和结束-不关注迭代过程&quot; class=&quot;headerlink&quot; title=&quot;隐式迭代 - 只关注迭代的开始和结束,不关注迭代过程&quot;&gt;&lt;/a&gt;隐式迭代 - 只关注迭代的开始和结束,不关注迭代过程&lt;/h3&gt;&lt;h4 id=&quot;方法&quot;&gt;&lt;a href=&quot;#方法&quot; class=&quot;headerlink&quot; title=&quot;方法&quot;&gt;&lt;/a&gt;方法&lt;/h4&gt;&lt;ul&gt;
 &lt;li&gt;$(selector).each(callback) (jQuery)对象方法&lt;/li&gt;
@@ -47,6 +47,8 @@
     
     </summary>
     
+    
+      <category term="each()" scheme="http://yoursite.com/tags/each/"/>
     
   </entry>
   
