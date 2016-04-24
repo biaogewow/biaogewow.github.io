@@ -113,13 +113,13 @@
                 <div class="tips-box hide">
                     <div class="tips-arrow"></div>
                     <ul class="tips-inner">
-                        <li>菜單</li>
-                        <li>標籤</li>
+                        <li>菜单</li>
+                        <li>标签</li>
                         
-                        <li>友情鏈接</li>
+                        <li>友情链接</li>
                         
                         
-                        <li>關於我</li>
+                        <li>关于我</li>
                         
                     </ul>
                 </div>
@@ -265,7 +265,7 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="jQuery的选择器"><a href="#jQuery的选择器" class="headerlink" title="jQuery的选择器"></a>jQuery的选择器</h2><h3 id="基本内容"><a href="#基本内容" class="headerlink" title="基本内容"></a>基本内容</h3><p><strong>注：jQuery中的选择器源于CSS中的选择器，并进行扩展,jQuery中的选择器是jQuery的根基</strong></p>
+              <h2 id="jQuery的选择器"><a href="#jQuery的选择器" class="headerlink" title="jQuery的选择器"></a>jQuery的选择器</h2><h3 id="基本内容"><a href="#基本内容" class="headerlink" title="基本内容"></a>基本内容</h3><p><strong>注：jQuery中的选择器源于CSS中的选择器，并进行扩展,jQuery中的选择器是jQuery的根基</strong></p>
 <h4 id="选择器分类"><a href="#选择器分类" class="headerlink" title="选择器分类"></a>选择器分类</h4><pre><code>一、 基本选择器  
     * ID选择器  #id值
     * 元素选择器  element
@@ -278,56 +278,8 @@
     * 父元素 &gt; 子元素
     * 目标元素 + 下一个兄弟元素
     * 目标元素 ~ 后面所有兄弟元素
-
-三、过滤选择器 （注：在所有的过滤选择器前，需要增加&quot;:&quot;）
- 1、 基本过滤选择器
-    * :first - 匹配第一个
-    * first()函数
-    * :last - 匹配最后一个
-    * last()函数
-    * :not() - 匹配指定规则之外
-    * :even - 匹配偶数 从0开始
-    * :odd - 匹配奇数
-    * :eq() - 索引值等于
-    * 索引值从 0 开始
-    * :gt() - 索引值大于
-    * :lt() - 索引值小于
-    * :header - 匹配h1h2h3h4h5h6标题
-    * :animated - 匹配动画（只能匹配jQuery实现的动画效果）
-
- 2、子元素过滤选择器
-    * :nth-child() （注：从1开始）
-    * :first-child
-    * :last-child
-    * :only-child - 只有一个子元素
-
- 3、 可见性过滤选择器
-    * :hidden - 匹配隐藏元素
-    * :visible - 匹配可见元素
-
- 4、 属性过滤选择器
-    * [attrName]
-    * [attrName=value]
-    * [attrName!=value]
-    * [attrName^=value]
-    * [attrName$=value]
-    * [attrName*=value]
-    * [][][]（组合）
-
- 5、内容过滤选择器
-    * :contains(text) - 含有指定文本的元素
-    * :empty - 不包含子元素或文本元素的元素
-    * :parent - 包含子元素或文本元素的元素
-    * :has(selector) - 包含匹配selector的父元素
-
- 6、表单对象属性过滤选择器
-    * :enabled
-    * :disabled
-    * :checked
-    * :selected
-
- 7、表单选择器
 </code></pre>
+          
       
     </div>
     
@@ -340,6 +292,10 @@
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery选择器/">jQuery选择器</a></li></ul>
     </div>
 
+      
+        <p class="article-more-link">
+          <a href="/2016/04/24/jQuery选择器/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -381,40 +337,30 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h3 id="隐式迭代-只关注迭代的开始和结束-不关注迭代过程"><a href="#隐式迭代-只关注迭代的开始和结束-不关注迭代过程" class="headerlink" title="隐式迭代 - 只关注迭代的开始和结束,不关注迭代过程"></a>隐式迭代 - 只关注迭代的开始和结束,不关注迭代过程</h3><h4 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h4><ul>
+              <h3 id="隐式迭代-只关注迭代的开始和结束-不关注迭代过程"><a href="#隐式迭代-只关注迭代的开始和结束-不关注迭代过程" class="headerlink" title="隐式迭代 - 只关注迭代的开始和结束,不关注迭代过程"></a>隐式迭代 - 只关注迭代的开始和结束,不关注迭代过程</h3><h4 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h4><ul>
 <li>$(selector).each(callback) (jQuery)对象方法</li>
 <li>$.each(obj,callback) (jQuery)全局函数<ul>
 <li>callback 回调函数,function(index,domEle){}</li>
-<li>index 遍历过程中的索引值    </li>
+<li>index 遍历过程中的索引值</li>
 <li>domEle 遍历得到的每个DOM对象(元素)</li>
-<li>obj 需要遍历的对象或数组</li>
-</ul>
-</li>
-</ul>
-<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><pre><code>$(&quot;ul&gt;li&quot;).each(function(index,domEle){
-        if(index%2==0){
-        domEle.style.backgroundColor=&quot;skyblue&quot;;
-        }
-    })
-
-将li中索引值为偶数的颜色变为天蓝（偶数从0开始）
-</code></pre>
+<li>obj 需要遍历的对象或数组
+          
       
     </div>
     
     <div class="article-info article-info-index">
       
       
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/each/">each()</a>
-    </div>
-
 
       
     <div class="article-tag tagcloud">
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/each/">each()</a></li></ul>
     </div>
 
+      
+        <p class="article-more-link">
+          <a href="/2016/04/24/each/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -456,10 +402,11 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h3 id="1-onload没有简写形式-ready具有简写形式，简写形式如下"><a href="#1-onload没有简写形式-ready具有简写形式，简写形式如下" class="headerlink" title="1.onload没有简写形式,ready具有简写形式，简写形式如下:"></a>1.onload没有简写形式,ready具有简写形式，简写形式如下:</h3><pre><code>$(document).ready(function(){})   
+              <h3 id="1-onload没有简写形式-ready具有简写形式，简写形式如下"><a href="#1-onload没有简写形式-ready具有简写形式，简写形式如下" class="headerlink" title="1.onload没有简写形式,ready具有简写形式，简写形式如下:"></a>1.onload没有简写形式,ready具有简写形式，简写形式如下:</h3><pre><code>$(document).ready(function(){})   
 $().ready(function(){}) 
 $(function(){})
-</code></pre><h3 id="2-nbsp-onload必须等待HTML页面中所有内部都加载完毕后才执行；ready是等待DOM节点树的内容加载完毕后就执行"><a href="#2-nbsp-onload必须等待HTML页面中所有内部都加载完毕后才执行；ready是等待DOM节点树的内容加载完毕后就执行" class="headerlink" title="2.&nbsp;onload必须等待HTML页面中所有内部都加载完毕后才执行；ready是等待DOM节点树的内容加载完毕后就执行"></a>2.&nbsp;onload必须等待HTML页面中所有内部都加载完毕后才执行；ready是等待DOM节点树的内容加载完毕后就执行</h3><h3 id="3-nbsp-一个HTML页面只能编写一个onload；但是一个HTML页面允许编写多个ready"><a href="#3-nbsp-一个HTML页面只能编写一个onload；但是一个HTML页面允许编写多个ready" class="headerlink" title="3.&nbsp;一个HTML页面只能编写一个onload；但是一个HTML页面允许编写多个ready"></a>3.&nbsp;一个HTML页面只能编写一个onload；但是一个HTML页面允许编写多个ready</h3><h3 id="注：可以利用此制作页面加载转圈效果"><a href="#注：可以利用此制作页面加载转圈效果" class="headerlink" title="注：可以利用此制作页面加载转圈效果"></a>注：可以利用此制作页面加载转圈效果</h3>
+</code></pre><h3 id="2-nbsp-onload必须等待HTML页面中所有内部都加载完毕后才执行；ready是等待DOM节点树的内容加载完毕后就执行"><a href="#2-nbsp-onload必须等待HTML页面中所有内部都加载完毕后才执行；ready是等待DOM节点树的内容加载完毕后就执行" class="headerlink" title="2.&nbsp;onload必须等待HTML页面中所有内部都加载完毕后才执行；ready是等待DOM节点树的内容加载完毕后就执行"></a>2.&nbsp;onload必须等待HTML页面中所有内部都加载完毕后才执行；ready是等待DOM节点树的内容加载完毕后就执行</h3>
+          
       
     </div>
     
@@ -472,6 +419,10 @@ $(function(){})
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/read/">read()</a></li></ul>
     </div>
 
+      
+        <p class="article-more-link">
+          <a href="/2016/04/15/ready/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -495,14 +446,14 @@ $(function(){})
                 &copy; 2016 jiangBiao
             </div>
             <div class="footer-right">
-                <a href="http://hexo.io/" target="_blank" title="快速、簡潔且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="簡而不減 Hexo 雙欄博客主題">Yelee</a> by MOxFIVE
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题">Yelee</a> by MOxFIVE
             </div>
         </div>
         
             <div class="visit">
                 
                     <span id="busuanzi_container_site_pv" style='display:none'>
-                        <span id="site-visit" >本站到訪數: 
+                        <span id="site-visit" >本站到访数: 
                             <span id="busuanzi_value_site_uv"></span>
                         </span>
                     </span>
@@ -512,7 +463,7 @@ $(function(){})
                 
                 
                     <span id="busuanzi_container_page_pv" style='display:none'>
-                        <span id="page-visit">本頁閱讀量: 
+                        <span id="page-visit">本页阅读量: 
                             <span id="busuanzi_value_page_pv"></span>
                         </span>
                     </span>
@@ -545,9 +496,9 @@ $(function(){})
 
 
 <div class="scroll" id="scroll">
-    <a href="#" title="返回頂部"><i class="fa fa-arrow-up"></i></a>
-    <a href="#comments" title="查看評論"><i class="fa fa-comments-o"></i></a>
-    <a href="#footer" title="轉到底部"><i class="fa fa-arrow-down"></i></a>
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
 </div>
 
     <script src="//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js"></script>
