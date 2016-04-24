@@ -3,17 +3,39 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives: 2016/4 | My blog</title>
+  <title>jQuery中的隐式迭代--each()用法 | My blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="My blog">
-<meta property="og:url" content="http://yoursite.com/archives/2016/04/index.html">
+  <meta name="description" content="隐式迭代 - 只关注迭代的开始和结束,不关注迭代过程方法
+$(selector).each(callback) (jQuery)对象方法
+$.each(obj,callback) (jQuery)全局函数
+
+callback 回调函数,function(index,domEle){}
+index 遍历过程中的索引值    
+domEle 遍历得到的每个DOM对象(元素)
+obj 需要遍历的对象或数">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jQuery中的隐式迭代--each()用法">
+<meta property="og:url" content="http://yoursite.com/2016/04/24/each/index.html">
 <meta property="og:site_name" content="My blog">
-<meta property="og:description">
+<meta property="og:description" content="隐式迭代 - 只关注迭代的开始和结束,不关注迭代过程方法
+$(selector).each(callback) (jQuery)对象方法
+$.each(obj,callback) (jQuery)全局函数
+
+callback 回调函数,function(index,domEle){}
+index 遍历过程中的索引值    
+domEle 遍历得到的每个DOM对象(元素)
+obj 需要遍历的对象或数">
+<meta property="og:updated_time" content="2016-04-24T06:33:31.867Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="My blog">
-<meta name="twitter:description">
+<meta name="twitter:title" content="jQuery中的隐式迭代--each()用法">
+<meta name="twitter:description" content="隐式迭代 - 只关注迭代的开始和结束,不关注迭代过程方法
+$(selector).each(callback) (jQuery)对象方法
+$.each(obj,callback) (jQuery)全局函数
+
+callback 回调函数,function(index,domEle){}
+index 遍历过程中的索引值    
+domEle 遍历得到的每个DOM对象(元素)
+obj 需要遍历的对象或数">
   
     <link rel="alternative" href="/atom.xml" title="My blog" type="application/atom+xml">
   
@@ -45,8 +67,8 @@
           fancybox: true,
           animate: true,
           isHome: false,
-          isPost: false,
-          isArchive: true,
+          isPost: true,
+          isArchive: false,
           isTag: false,
           isCategory: false,
           open_in_new: false,
@@ -231,77 +253,194 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-each" class="article article-type-post" itemscope itemprop="blogPost">
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2016/04/24/each/" class="archive-article-date">
-      <time datetime="2016-04-24T03:30:04.000Z" itemprop="datePublished">04-24</time>
+    <div class="article-meta">
+      <a href="/2016/04/24/each/" class="article-date">
+      <time datetime="2016-04-24T03:30:04.000Z" itemprop="datePublished">2016-04-24</time>
 </a>
-        </div>
-         
+    </div>
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/04/24/each/">jQuery中的隐式迭代--each()用法</a>
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      jQuery中的隐式迭代--each()用法
     </h1>
   
 
-        <div class="article-info info-on-archive">
-          
+      </header>
+      
+      <div class="article-info article-info-post">
+        
 
-          
-        </div>
+        
         <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
+      </div>
+      
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2016/04/15/ready/" class="archive-article-date">
-      <time datetime="2016-04-15T14:12:38.586Z" itemprop="datePublished">04-15</time>
-</a>
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/04/15/ready/">ready()与onload的区别</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
+    <div class="article-entry" itemprop="articleBody">
+      
           
+        <h3 id="隐式迭代-只关注迭代的开始和结束-不关注迭代过程"><a href="#隐式迭代-只关注迭代的开始和结束-不关注迭代过程" class="headerlink" title="隐式迭代 - 只关注迭代的开始和结束,不关注迭代过程"></a>隐式迭代 - 只关注迭代的开始和结束,不关注迭代过程</h3><h4 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h4><ul>
+<li>$(selector).each(callback) (jQuery)对象方法</li>
+<li><p>$.each(obj,callback) (jQuery)全局函数</p>
+<ul>
+<li>callback 回调函数,function(index,domEle){}</li>
+<li>index 遍历过程中的索引值    </li>
+<li>domEle 遍历得到的每个DOM对象(元素)</li>
+<li><p>obj 需要遍历的对象或数组</p>
+<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><p>$(“ul&gt;li”).each(function(index,domEle){</p>
+<pre><code>if(index%2==0){
+domEle.style.backgroundColor=&quot;skyblue&quot;;
+}
+</code></pre><p>  })</p>
+<p>将li中索引值为偶数的颜色变为天蓝（偶数从0开始）</p>
+</li>
+</ul>
+</li>
+</ul>
 
-          
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    
   </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2016/04/24/each/">jQuery中的隐式迭代--each()用法</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">jiangBiao</a></p>
+        <p><span>发布时间:</span>2016-04-24, 11:30:04</p>
+        <p><span>最后更新:</span>2016-04-24, 14:33:31</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2016/04/24/each/" title="jQuery中的隐式迭代--each()用法">http://yoursite.com/2016/04/24/each/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/04/24/each/　　作者: jiangBiao" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2016/04/15/ready/">
+                    ready()与onload的区别
+                </a>
+            </div>
+        
+    </nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#隐式迭代-只关注迭代的开始和结束-不关注迭代过程"><span class="toc-number">1.</span> <span class="toc-text">隐式迭代 - 只关注迭代的开始和结束,不关注迭代过程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#方法"><span class="toc-number">1.1.</span> <span class="toc-text">方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#代码"><span class="toc-number">1.2.</span> <span class="toc-text">代码</span></a></li></ol></li></ol>
+</div>
+<style>
+    .left-col .switch-btn {
+        display: none;
+    }
+    .left-col .switch-area {
+        display: none;
+    }
+</style>
+
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+            $(".switch-btn, .switch-area").fadeOut(300);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+            $(".switch-btn, .switch-area").fadeIn(500);
+        }
+    })
+
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+        $(".switch-btn, .switch-area").show();
+    }
+</script>
+
+
+
+
 
     
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <li id="bds_twi"><a href="#" class="bds_twi" data-cmd="twi" title="分享到推特"></a></li>
+            <li id="bds_tsina"><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a></li>
+            <li id="bds_sqq"><a href="#" class="bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a></li>
+            <li id="bds_copy"><a href="#" class="bds_copy" data-cmd="copy" title="复制网址"></a></li>
+            <li id="bds_mail"><a href="#" class="bds_mail" data-cmd="mail" title="通过邮件分享"></a></li>
+            <li id="bds_weixin"><a href="#" class="bds_weixin" data-cmd="weixin" title="生成文章二维码"></a></li>
+            <li id="bds_more"><a href="#" class="bds_more" data-cmd="more"></i></a></li>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"jQuery中的隐式迭代--each()用法　| My blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
 
+    
+</div>
+
+
+
+
+
+
+
+  
+  
+  
+
+
+    
+      <div class="duoshuo" id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="2016/04/24/each/" data-title="jQuery中的隐式迭代--each()用法" data-url="http://yoursite.com/2016/04/24/each/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:"jiangbiaowow"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script>
+    <!-- 多说公共JS代码 end -->
+</div>
+
+    
 </div>
       <footer id="footer">
     <div class="outer">

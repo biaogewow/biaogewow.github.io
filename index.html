@@ -238,6 +238,74 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-each" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/24/each/" class="article-date">
+      <time datetime="2016-04-24T03:30:04.000Z" itemprop="datePublished">2016-04-24</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/24/each/">jQuery中的隐式迭代--each()用法</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h3 id="隐式迭代-只关注迭代的开始和结束-不关注迭代过程"><a href="#隐式迭代-只关注迭代的开始和结束-不关注迭代过程" class="headerlink" title="隐式迭代 - 只关注迭代的开始和结束,不关注迭代过程"></a>隐式迭代 - 只关注迭代的开始和结束,不关注迭代过程</h3><h4 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h4><ul>
+<li>$(selector).each(callback) (jQuery)对象方法</li>
+<li><p>$.each(obj,callback) (jQuery)全局函数</p>
+<ul>
+<li>callback 回调函数,function(index,domEle){}</li>
+<li>index 遍历过程中的索引值    </li>
+<li>domEle 遍历得到的每个DOM对象(元素)</li>
+<li><p>obj 需要遍历的对象或数组</p>
+<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><p>$(“ul&gt;li”).each(function(index,domEle){</p>
+<pre><code>if(index%2==0){
+domEle.style.backgroundColor=&quot;skyblue&quot;;
+}
+</code></pre><p>  })</p>
+<p>将li中索引值为偶数的颜色变为天蓝（偶数从0开始）</p>
+</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+  
     <article id="post-ready" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">

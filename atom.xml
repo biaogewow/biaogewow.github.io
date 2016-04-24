@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-04-24T06:33:40.256Z</updated>
+  <updated>2016-04-24T06:33:31.867Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,42 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>jQuery中的隐式迭代--each()用法</title>
+    <link href="http://yoursite.com/2016/04/24/each/"/>
+    <id>http://yoursite.com/2016/04/24/each/</id>
+    <published>2016-04-24T03:30:04.000Z</published>
+    <updated>2016-04-24T06:33:31.867Z</updated>
+    
+    <content type="html">&lt;h3 id=&quot;隐式迭代-只关注迭代的开始和结束-不关注迭代过程&quot;&gt;&lt;a href=&quot;#隐式迭代-只关注迭代的开始和结束-不关注迭代过程&quot; class=&quot;headerlink&quot; title=&quot;隐式迭代 - 只关注迭代的开始和结束,不关注迭代过程&quot;&gt;&lt;/a&gt;隐式迭代 - 只关注迭代的开始和结束,不关注迭代过程&lt;/h3&gt;&lt;h4 id=&quot;方法&quot;&gt;&lt;a href=&quot;#方法&quot; class=&quot;headerlink&quot; title=&quot;方法&quot;&gt;&lt;/a&gt;方法&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;$(selector).each(callback) (jQuery)对象方法&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;$.each(obj,callback) (jQuery)全局函数&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;callback 回调函数,function(index,domEle){}&lt;/li&gt;
+&lt;li&gt;index 遍历过程中的索引值    &lt;/li&gt;
+&lt;li&gt;domEle 遍历得到的每个DOM对象(元素)&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;obj 需要遍历的对象或数组&lt;/p&gt;
+&lt;h4 id=&quot;代码&quot;&gt;&lt;a href=&quot;#代码&quot; class=&quot;headerlink&quot; title=&quot;代码&quot;&gt;&lt;/a&gt;代码&lt;/h4&gt;&lt;p&gt;$(“ul&amp;gt;li”).each(function(index,domEle){&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;if(index%2==0){
+domEle.style.backgroundColor=&amp;quot;skyblue&amp;quot;;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;  })&lt;/p&gt;
+&lt;p&gt;将li中索引值为偶数的颜色变为天蓝（偶数从0开始）&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;隐式迭代-只关注迭代的开始和结束-不关注迭代过程&quot;&gt;&lt;a href=&quot;#隐式迭代-只关注迭代的开始和结束-不关注迭代过程&quot; class=&quot;headerlink&quot; title=&quot;隐式迭代 - 只关注迭代的开始和结束,不关注迭代过程&quot;&gt;&lt;/a&gt;隐式迭代 - 只关注迭代
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>ready()与onload的区别</title>
