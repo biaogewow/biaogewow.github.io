@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   
-  <title>My blog</title>
+  <title>Tag: read() | My blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description">
 <meta property="og:type" content="website">
 <meta property="og:title" content="My blog">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:url" content="http://yoursite.com/tags/read/index.html">
 <meta property="og:site_name" content="My blog">
 <meta property="og:description">
 <meta name="twitter:card" content="summary">
@@ -32,13 +32,8 @@
   
   <link rel="stylesheet" href="/css/style.css">
   
-      <style> .article { opacity: 0;} </style>
-  
   <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  
-    
-    
   
   
     <link rel="stylesheet" href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css">
@@ -49,10 +44,10 @@
       var yiliaConfig = {
           fancybox: true,
           animate: true,
-          isHome: true,
+          isHome: false,
           isPost: false,
           isArchive: false,
-          isTag: false,
+          isTag: true,
           isCategory: false,
           open_in_new: false,
       }
@@ -238,131 +233,52 @@
 </nav>
       <div class="body-wrap">
   
-    <article id="post-each" class="article article-type-post" itemscope itemprop="blogPost">
   
-    <div class="article-meta">
-      <a href="/2016/04/24/each/" class="article-date">
-      <time datetime="2016-04-24T03:30:04.000Z" itemprop="datePublished">2016-04-24</time>
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2016" class="archive-year">2016</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+          <div class="article-meta">
+              <a href="/2016/04/15/ready/" class="archive-article-date">
+      <time datetime="2016-04-15T14:12:38.586Z" itemprop="datePublished">04-15</time>
 </a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
+        </div>
+         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/24/each/">jQuery中的隐式迭代--each()用法</a>
+      <a class="archive-article-title" href="/2016/04/15/ready/">ready()与onload的区别</a>
     </h1>
   
 
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
+        <div class="article-info info-on-archive">
           
-        <h3 id="隐式迭代-只关注迭代的开始和结束-不关注迭代过程"><a href="#隐式迭代-只关注迭代的开始和结束-不关注迭代过程" class="headerlink" title="隐式迭代 - 只关注迭代的开始和结束,不关注迭代过程"></a>隐式迭代 - 只关注迭代的开始和结束,不关注迭代过程</h3><h4 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h4><ul>
-<li>$(selector).each(callback) (jQuery)对象方法</li>
-<li>$.each(obj,callback) (jQuery)全局函数<ul>
-<li>callback 回调函数,function(index,domEle){}</li>
-<li>index 遍历过程中的索引值    </li>
-<li>domEle 遍历得到的每个DOM对象(元素)</li>
-<li>obj 需要遍历的对象或数组</li>
-</ul>
-</li>
-</ul>
-<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><pre><code>$(&quot;ul&gt;li&quot;).each(function(index,domEle){
-        if(index%2==0){
-        domEle.style.backgroundColor=&quot;skyblue&quot;;
-        }
-    })
 
-将li中索引值为偶数的颜色变为天蓝（偶数从0开始）
-</code></pre>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-  
-    <article id="post-ready" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/04/15/ready/" class="article-date">
-      <time datetime="2016-04-15T14:12:38.586Z" itemprop="datePublished">2016-04-15</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/15/ready/">ready()与onload的区别</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
           
-        <h3 id="1-onload没有简写形式-ready具有简写形式，简写形式如下"><a href="#1-onload没有简写形式-ready具有简写形式，简写形式如下" class="headerlink" title="1.onload没有简写形式,ready具有简写形式，简写形式如下:"></a>1.onload没有简写形式,ready具有简写形式，简写形式如下:</h3><pre><code>$(document).ready(function(){})   
-$().ready(function(){}) 
-$(function(){})
-</code></pre><h3 id="2-nbsp-onload必须等待HTML页面中所有内部都加载完毕后才执行；ready是等待DOM节点树的内容加载完毕后就执行"><a href="#2-nbsp-onload必须等待HTML页面中所有内部都加载完毕后才执行；ready是等待DOM节点树的内容加载完毕后就执行" class="headerlink" title="2.&nbsp;onload必须等待HTML页面中所有内部都加载完毕后才执行；ready是等待DOM节点树的内容加载完毕后就执行"></a>2.&nbsp;onload必须等待HTML页面中所有内部都加载完毕后才执行；ready是等待DOM节点树的内容加载完毕后就执行</h3><h3 id="3-nbsp-一个HTML页面只能编写一个onload；但是一个HTML页面允许编写多个ready"><a href="#3-nbsp-一个HTML页面只能编写一个onload；但是一个HTML页面允许编写多个ready" class="headerlink" title="3.&nbsp;一个HTML页面只能编写一个onload；但是一个HTML页面允许编写多个ready"></a>3.&nbsp;一个HTML页面只能编写一个onload；但是一个HTML页面允许编写多个ready</h3><h3 id="注：可以利用此制作页面加载转圈效果"><a href="#注：可以利用此制作页面加载转圈效果" class="headerlink" title="注：可以利用此制作页面加载转圈效果"></a>注：可以利用此制作页面加载转圈效果</h3>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
     <div class="article-tag tagcloud">
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/read/">read()</a></li></ul>
     </div>
 
-      
-      <div class="clearfix"></div>
-    </div>
-    
+        </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
-  
 </article>
-
-
-
-
-
-
   
   
+    </div></section>
+  
+
+    
+
 </div>
       <footer id="footer">
     <div class="outer">
