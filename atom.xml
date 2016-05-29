@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-05-29T11:39:12.359Z</updated>
+  <updated>2016-05-29T12:23:25.407Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,134 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>AJAX</title>
+    <link href="http://yoursite.com/2016/05/29/AJAX/"/>
+    <id>http://yoursite.com/2016/05/29/AJAX/</id>
+    <published>2016-05-29T11:45:30.000Z</published>
+    <updated>2016-05-29T12:23:25.407Z</updated>
+    
+    <content type="html">&lt;h2 id=&quot;异步的HTTP“请求-响应”模型——XMLHttpRequest&quot;&gt;&lt;a href=&quot;#异步的HTTP“请求-响应”模型——XMLHttpRequest&quot; class=&quot;headerlink&quot; title=&quot;异步的HTTP“请求-响应”模型——XMLHttpRequest&quot;&gt;&lt;/a&gt;异步的HTTP“请求-响应”模型——XMLHttpRequest&lt;/h2&gt;&lt;p&gt;当前页面发起一个异步的请求，为了获取服务器端返回的一小段数据(一般都不是完整的HTML页面)，客户端也不会把当前页面内容清除，而是等待着服务器返回数据片段，把这些片段的内容挂载到当前DOM树上。&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;优点：客户端不会出现一片惨白；服务器端返回的数据量小多了。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;一、原生js使用AJAX的基本步骤：&quot;&gt;&lt;a href=&quot;#一、原生js使用AJAX的基本步骤：&quot; class=&quot;headerlink&quot; title=&quot;一、原生js使用AJAX的基本步骤：&quot;&gt;&lt;/a&gt;一、原生js使用AJAX的基本步骤：&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;使用AJAX应用的步骤：
+(第一步)
+创建XMLHttpRequest对象——注意IE的兼容性问题
+    var xhr = null ;
+        if(  window.XMLHttpRequest ){   //普通浏览器
+            xhr = new XMLHttpRequest( );        
+        }else{  //老IE浏览器
+            xhr =  new ActiveXObject(&amp;apos;Microsoft.XMLHTTP&amp;apos;);
+        }
+(第二步)
+为XHR对象的onreadystatechange句柄绑定监听函数——监听xhr.readyState属性值的改变
+    xhr.onreadystatechange = function(){
+            if(xhr.readyState===4){    //接收了所有的响应数据
+                if(xhr.status===200){
+                    //响应成功，可以处理响应主体数据了...xhr.responseText
+                }else{
+                    //响应已结束，但并不是成功的响应
+                }
+            }
+        }
+(第三步)
+使用XHR对象创建一个HTTP请求消息
+    xhr.open(请求方法,  URI,  true);  //请求方法：get、post；true是异步
+(第四步)
+使用XHR对象发送请求消息给服务器
+    xhr.send(null/&amp;apos;k1=v1&amp;amp;k2=v2&amp;apos;);
+
+ 一、使用AJAX发送GET请求
+        (1)创建XHR对象
+        (2)绑定监听函数
+        (3)创建请求消息
+        xhr.open(&amp;apos;GET&amp;apos;, &amp;apos;xxx.php?k1=v1&amp;amp;k2=v2&amp;apos;, true);
+        (4)发送请求消息
+        xhr.send(null);  //HTTP协议规定：GET没有请求主体
+
+二、使用AJAX发送POST请求
+        (1)创建XHR对象
+        (2)绑定监听函数
+        (3)创建请求消息
+        xhr.open(&amp;apos;POST&amp;apos;, &amp;apos;xxx.php&amp;apos;, true);
+        (4)发送请求消息——必须设置Content-Type请求头（因为AJAX POST请求默认使用Content-Type: text/plain发送请求主体数据——PHP服务器是无法接收）
+        xhr.setRequestHeader(&amp;apos;Content-Type&amp;apos;,  &amp;apos;application/x-www-form-urlencoded&amp;apos;);
+        xhr.send(encodeURI(&amp;apos;k1=v1&amp;amp;k2=v2&amp;amp;k3=v3&amp;apos;));//当有中文时需用encodeURI（）
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;二、使用jQuery简化AJAX操作：&quot;&gt;&lt;a href=&quot;#二、使用jQuery简化AJAX操作：&quot; class=&quot;headerlink&quot; title=&quot;二、使用jQuery简化AJAX操作：&quot;&gt;&lt;/a&gt;二、使用jQuery简化AJAX操作：&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;1.使用$(&amp;apos;...&amp;apos;).load(url,  [data],  [fn])函数//参数可以写成{key:value}  
+  作用：载入远程 HTML 文件代码片段并插入至当前选中的DOM元素中。
+  此方法最大的限制：(1)服务器返回的数据必须是HTML代码片段！(2)且因为底层使用的是（innerHTML=返回值），原有内容都会被清除掉——灵活性不足。
+&lt;/code&gt;&lt;/pre&gt;&lt;hr&gt;
+&lt;pre&gt;&lt;code&gt;2.使用$.ajax(  )函数
+        使用方法：
+        $.ajax({
+            type:&amp;apos;GET/POST&amp;apos;,
+            url: &amp;apos;xxx.php&amp;apos;,
+            data: &amp;apos;k1=v1&amp;amp;k2=v2&amp;apos;/{k1:v1, k2:v2},
+            dataType: &amp;apos;text/html/script/xml/json/jsonp&amp;apos;
+            async: true,
+            error: function(){   },
+            success: function(){   }
+        });
+&lt;/code&gt;&lt;/pre&gt;&lt;hr&gt;
+&lt;pre&gt;&lt;code&gt;3.使用$.get()、$.post()、$.getScript()、$.getJSON()方法
+        $.ajax({ 
+            type:  &amp;apos;GET&amp;apos;,
+            url: &amp;apos;...&amp;apos;
+            data:  ...,
+            success: fn
+          })
+          上述方法可以简写为：  $.get(&amp;apos;url&amp;apos;,  data,  fn);//如果没写dataType，会自动获取服务器端的响应头部，
+          根据类型自动解析
+
+        $.ajax({ 
+            type:  &amp;apos;POST&amp;apos;,
+            url: &amp;apos;...&amp;apos;
+            data:  ...,
+            success: fn
+          })
+          上述方法可以简写为：   $.post(&amp;apos;url&amp;apos;,  data,   fn)    
+
+        $.getJSON()是$.ajax({ dataType: &amp;apos;json&amp;apos;})的简写，用于从服务器一段JSON数据，并解析为JS对象。
+
+        $.getScript()是$.ajax({ dataType: &amp;apos;script&amp;apos;})的简写，用于从服务器一段JavaScript脚本，并立即调用eval()函数执行返回的脚本。
+&lt;/code&gt;&lt;/pre&gt;&lt;hr&gt;
+&lt;pre&gt;&lt;code&gt;4.jQuery对AJAX的支持——表单输入的序列化
+  var stringData = $(&amp;apos;#xxForm&amp;apos;).serialize( );//主要
+  var objData = $(&amp;apos;#xxForm&amp;apos;).serializeArray();
+  表单序列化：把当前选定的表单中所有的输入域的名和值组成一个大的用&amp;amp;符号拼接的字符串，可以直接用于AJAX请求方法。
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;三、Angular-JS里-http：提供异步的AJAX请求服务&quot;&gt;&lt;a href=&quot;#三、Angular-JS里-http：提供异步的AJAX请求服务&quot; class=&quot;headerlink&quot; title=&quot;三、Angular JS里$http：提供异步的AJAX请求服务&quot;&gt;&lt;/a&gt;三、Angular JS里$http：提供异步的AJAX请求服务&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;1.GET请求
+    .controller(&amp;apos;名称&amp;apos;, function($http){
+        $http.get(&amp;apos;xx.php？k1=v1&amp;amp;k2=v2&amp;apos;).success(fn)
+    })
+
+    例：$http.get(&amp;apos;data/dish.php?kw=&amp;apos;+$scope.kw)
+            .success(function(data){
+
+            });
+
+
+2.POST请求——重点且注意（必须设置请求头部，且用jQuery的param()方法解析data）
+    var data = {k1: v1,  k2:v2 };
+    data = jQuery.param( data );
+    $http.post(
+        &amp;apos;xx.php&amp;apos;,
+        data,
+        { 
+        headers :{&amp;apos;Content-Type&amp;apos;:&amp;apos;application/x-www-form-urlencoded&amp;apos;}     
+        }
+    )
+    .success(fn);
+&lt;/code&gt;&lt;/pre&gt;</content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;异步的HTTP“请求-响应”模型——XMLHttpRequest&quot;&gt;&lt;a href=&quot;#异步的HTTP“请求-响应”模型——XMLHttpRequest&quot; class=&quot;headerlink&quot; title=&quot;异步的HTTP“请求-响应”模型——XMLHttpRequest&quot;&gt;&lt;/a&gt;异步的HTTP“请求-响应”模型——XMLHttpRequest&lt;/h2&gt;&lt;p&gt;当前页面发起一个异步的请求，为了获取服务器端返回的一小段数据(一般都不是完整的HTML页面)，客户端也不会把当前页面内容清除，而是等待着服务器返回数据片段，把这些片段的内容挂载到当前DOM树上。&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;优点：客户端不会出现一片惨白；服务器端返回的数据量小多了。&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="ajax" scheme="http://yoursite.com/tags/ajax/"/>
+    
+  </entry>
   
   <entry>
     <title>jQuery中on()方法</title>
