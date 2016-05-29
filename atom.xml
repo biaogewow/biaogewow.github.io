@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-04-24T14:10:17.965Z</updated>
+  <updated>2016-05-29T11:36:49.370Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,41 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>jQuery中on()方法</title>
+    <link href="http://yoursite.com/2016/05/29/on%E6%96%B9%E6%B3%95/"/>
+    <id>http://yoursite.com/2016/05/29/on方法/</id>
+    <published>2016-05-29T10:36:53.000Z</published>
+    <updated>2016-05-29T11:36:49.370Z</updated>
+    
+    <content type="html">&lt;p&gt;##jQuery on()方法使用详解##&lt;/p&gt;
+&lt;p&gt;###jQuery on()方法是官方推荐的绑定事件的一个方法###&lt;/p&gt;
+&lt;p&gt;####$(selector).on(event,childSelector,data,function,map)####&lt;br&gt;    与此相似的有bind() 、live() 、delegate() ，以上三种方法在jQuery1.8之后都不推荐使用，&lt;br&gt;    官方在1.9时已经取消使用live()方法了，所以建议都使用on()方法；&lt;br&gt;    on()则是整合了之前的三种方式的新事件绑定机制。&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;##on方法的优势：##&lt;/p&gt;
+&lt;p&gt;###一、多个事件绑定同一个函数&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$(document).ready(function(){  
+    $(&amp;quot;p&amp;quot;).on(&amp;quot;mouseover click&amp;quot;,function(){  
+      $(this).show();  
+   });  
+}); 
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;###二、多个事件绑定不同函数&lt;br&gt;    $(document).ready(function(){&lt;br&gt;          $(“div”).on({&lt;br&gt;               mouseover:function(){$(“body”).css(“background-color”,”red”);},&lt;br&gt;            click:function(){$(“body”).css(“background-color”,”blue”);},&lt;br&gt;            mouseout:function(){$(“body”).css(“background-color”,”yellow”);}&lt;br&gt;              });&lt;br&gt;        });&lt;/p&gt;
+&lt;p&gt;###三、事件监听的委托——这是重点&lt;br&gt;        事件监听的委托，利用的是事件冒泡原理，监听点击事件&lt;br&gt;        可以节约性能，使用on函数有一个优点当就是动态添加新的项目进来的时候也会绑定事件&lt;br&gt;        $(document).ready(function(){&lt;br&gt;            var current = null;&lt;br&gt;            $(‘ul’).on(‘click’,’li’,&lt;br&gt;                function (){&lt;br&gt;                    $(this).css(“background-color”,”blue”); //此时this指代当前点击的li&lt;br&gt;                    current = this;&lt;br&gt;                }&lt;br&gt;            );&lt;br&gt;        });    &lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;##jQuery on()方法使用详解##&lt;/p&gt;
+&lt;p&gt;###jQuery on()方法是官方推荐的绑定事件的一个方法###&lt;/p&gt;
+&lt;p&gt;####$(selector).on(event,childSelector,data,function,map)####&lt;br&gt;    与此相似的有bind() 、live() 、delegate() ，以上三种方法在jQuery1.8之后都不推荐使用，&lt;br&gt;    官方在1.9时已经取消使用live()方法了，所以建议都使用on()方法；&lt;br&gt;    on()则是整合了之前的三种方式的新事件绑定机制。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="on()方法" scheme="http://yoursite.com/tags/on-%E6%96%B9%E6%B3%95/"/>
+    
+  </entry>
   
   <entry>
     <title>jQuery选择器</title>
