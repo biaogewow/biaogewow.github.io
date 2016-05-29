@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-05-29T12:30:49.704Z</updated>
+  <updated>2016-05-29T12:32:46.914Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,9 +20,10 @@
     <link href="http://yoursite.com/2016/05/29/ajax/"/>
     <id>http://yoursite.com/2016/05/29/ajax/</id>
     <published>2016-05-29T11:45:30.000Z</published>
-    <updated>2016-05-29T12:30:49.704Z</updated>
+    <updated>2016-05-29T12:32:46.914Z</updated>
     
-    <content type="html">&lt;h2 id=&quot;异步的HTTP“请求-响应”模型——XMLHttpRequest&quot;&gt;&lt;a href=&quot;#异步的HTTP“请求-响应”模型——XMLHttpRequest&quot; class=&quot;headerlink&quot; title=&quot;异步的HTTP“请求-响应”模型——XMLHttpRequest&quot;&gt;&lt;/a&gt;异步的HTTP“请求-响应”模型——XMLHttpRequest&lt;/h2&gt;&lt;p&gt;当前页面发起一个异步的请求，为了获取服务器端返回的一小段数据(一般都不是完整的HTML页面)，客户端也不会把当前页面内容清除，而是等待着服务器返回数据片段，把这些片段的内容挂载到当前DOM树上。&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;优点：客户端不会出现一片惨白；服务器端返回的数据量小多了。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+    <content type="html">&lt;h2 id=&quot;异步的HTTP“请求-响应”模型——XMLHttpRequest&quot;&gt;&lt;a href=&quot;#异步的HTTP“请求-响应”模型——XMLHttpRequest&quot; class=&quot;headerlink&quot; title=&quot;异步的HTTP“请求-响应”模型——XMLHttpRequest&quot;&gt;&lt;/a&gt;异步的HTTP“请求-响应”模型——XMLHttpRequest&lt;/h2&gt;&lt;p&gt;  当前页面发起一个异步的请求，为了获取服务器端返回的一小段数据(一般都不是完整的HTML页面)，客户端也不会把当前页面内容清除，而是等待着服务器返回数据片段，把这些片段的内容挂载到当前DOM树上。&lt;br&gt;  &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;优点：客户端不会出现一片惨白；服务器端返回的数据量小多了。&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;h2 id=&quot;一、原生js使用AJAX的基本步骤：&quot;&gt;&lt;a href=&quot;#一、原生js使用AJAX的基本步骤：&quot; class=&quot;headerlink&quot; title=&quot;一、原生js使用AJAX的基本步骤：&quot;&gt;&lt;/a&gt;一、原生js使用AJAX的基本步骤：&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;使用AJAX应用的步骤：
 (第一步)
 创建XMLHttpRequest对象——注意IE的兼容性问题
@@ -134,7 +135,7 @@
     
     <summary type="html">
     
-      &lt;h2 id=&quot;异步的HTTP“请求-响应”模型——XMLHttpRequest&quot;&gt;&lt;a href=&quot;#异步的HTTP“请求-响应”模型——XMLHttpRequest&quot; class=&quot;headerlink&quot; title=&quot;异步的HTTP“请求-响应”模型——XMLHttpRequest&quot;&gt;&lt;/a&gt;异步的HTTP“请求-响应”模型——XMLHttpRequest&lt;/h2&gt;&lt;p&gt;当前页面发起一个异步的请求，为了获取服务器端返回的一小段数据(一般都不是完整的HTML页面)，客户端也不会把当前页面内容清除，而是等待着服务器返回数据片段，把这些片段的内容挂载到当前DOM树上。&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;优点：客户端不会出现一片惨白；服务器端返回的数据量小多了。&lt;br&gt;
+      &lt;h2 id=&quot;异步的HTTP“请求-响应”模型——XMLHttpRequest&quot;&gt;&lt;a href=&quot;#异步的HTTP“请求-响应”模型——XMLHttpRequest&quot; class=&quot;headerlink&quot; title=&quot;异步的HTTP“请求-响应”模型——XMLHttpRequest&quot;&gt;&lt;/a&gt;异步的HTTP“请求-响应”模型——XMLHttpRequest&lt;/h2&gt;&lt;p&gt;  当前页面发起一个异步的请求，为了获取服务器端返回的一小段数据(一般都不是完整的HTML页面)，客户端也不会把当前页面内容清除，而是等待着服务器返回数据片段，把这些片段的内容挂载到当前DOM树上。&lt;br&gt;  &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;优点：客户端不会出现一片惨白；服务器端返回的数据量小多了。&lt;/p&gt;
     
     </summary>
     
