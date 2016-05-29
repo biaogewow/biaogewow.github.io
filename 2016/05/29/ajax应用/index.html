@@ -3,36 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>jQuery中的隐式迭代--each()用法 | My blog</title>
+  <title>ajax异步刷新技术 | My blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="隐式迭代 - 只关注迭代的开始和结束,不关注迭代过程方法
-$(selector).each(callback) (jQuery)对象方法
-$.each(obj,callback) (jQuery)全局函数
-callback 回调函数,function(index,domEle){}
-index 遍历过程中的索引值
-domEle 遍历得到的每个DOM对象(元素)
-obj 需要遍历的对象或数组">
+  <meta name="description" content="异步的HTTP“请求-响应”模型——XMLHttpRequest  当前页面发起一个异步的请求，为了获取服务器端返回的一小段数据(一般都不是完整的HTML页面)，客户端也不会把当前页面内容清除，而是等待着服务器返回数据片段，把这些片段的内容挂载到当前DOM树上。  &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;优点：客户端不会出现一片惨白；服务器端返回的数据量小多了。
+一、原生js使用AJAX的">
 <meta property="og:type" content="article">
-<meta property="og:title" content="jQuery中的隐式迭代--each()用法">
-<meta property="og:url" content="http://yoursite.com/2016/04/24/each/index.html">
+<meta property="og:title" content="ajax异步刷新技术">
+<meta property="og:url" content="http://yoursite.com/2016/05/29/ajax应用/index.html">
 <meta property="og:site_name" content="My blog">
-<meta property="og:description" content="隐式迭代 - 只关注迭代的开始和结束,不关注迭代过程方法
-$(selector).each(callback) (jQuery)对象方法
-$.each(obj,callback) (jQuery)全局函数
-callback 回调函数,function(index,domEle){}
-index 遍历过程中的索引值
-domEle 遍历得到的每个DOM对象(元素)
-obj 需要遍历的对象或数组">
-<meta property="og:updated_time" content="2016-04-24T14:10:31.132Z">
+<meta property="og:description" content="异步的HTTP“请求-响应”模型——XMLHttpRequest  当前页面发起一个异步的请求，为了获取服务器端返回的一小段数据(一般都不是完整的HTML页面)，客户端也不会把当前页面内容清除，而是等待着服务器返回数据片段，把这些片段的内容挂载到当前DOM树上。  &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;优点：客户端不会出现一片惨白；服务器端返回的数据量小多了。
+一、原生js使用AJAX的">
+<meta property="og:updated_time" content="2016-05-29T15:18:06.302Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="jQuery中的隐式迭代--each()用法">
-<meta name="twitter:description" content="隐式迭代 - 只关注迭代的开始和结束,不关注迭代过程方法
-$(selector).each(callback) (jQuery)对象方法
-$.each(obj,callback) (jQuery)全局函数
-callback 回调函数,function(index,domEle){}
-index 遍历过程中的索引值
-domEle 遍历得到的每个DOM对象(元素)
-obj 需要遍历的对象或数组">
+<meta name="twitter:title" content="ajax异步刷新技术">
+<meta name="twitter:description" content="异步的HTTP“请求-响应”模型——XMLHttpRequest  当前页面发起一个异步的请求，为了获取服务器端返回的一小段数据(一般都不是完整的HTML页面)，客户端也不会把当前页面内容清除，而是等待着服务器返回数据片段，把这些片段的内容挂载到当前DOM树上。  &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;优点：客户端不会出现一片惨白；服务器端返回的数据量小多了。
+一、原生js使用AJAX的">
   
     <link rel="alternative" href="/atom.xml" title="My blog" type="application/atom+xml">
   
@@ -250,11 +235,11 @@ obj 需要遍历的对象或数组">
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-each" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-ajax应用" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/04/24/each/" class="article-date">
-      <time datetime="2016-04-24T03:30:04.000Z" itemprop="datePublished">2016-04-24</time>
+      <a href="/2016/05/29/ajax应用/" class="article-date">
+      <time datetime="2016-05-29T11:45:30.000Z" itemprop="datePublished">2016-05-29</time>
 </a>
     </div>
   
@@ -267,7 +252,7 @@ obj 需要遍历的对象或数组">
         
   
     <h1 class="article-title" itemprop="name">
-      jQuery中的隐式迭代--each()用法
+      ajax异步刷新技术
     </h1>
   
 
@@ -278,7 +263,7 @@ obj 需要遍历的对象或数组">
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/each/">each()</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ajax/">ajax</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -288,24 +273,116 @@ obj 需要遍历的对象或数组">
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h3 id="隐式迭代-只关注迭代的开始和结束-不关注迭代过程"><a href="#隐式迭代-只关注迭代的开始和结束-不关注迭代过程" class="headerlink" title="隐式迭代 - 只关注迭代的开始和结束,不关注迭代过程"></a>隐式迭代 - 只关注迭代的开始和结束,不关注迭代过程</h3><h4 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h4><ul>
-<li>$(selector).each(callback) (jQuery)对象方法</li>
-<li>$.each(obj,callback) (jQuery)全局函数<ul>
-<li>callback 回调函数,function(index,domEle){}</li>
-<li>index 遍历过程中的索引值</li>
-<li>domEle 遍历得到的每个DOM对象(元素)</li>
-<li>obj 需要遍历的对象或数组<a id="more"></a>
-</li>
-</ul>
-</li>
-</ul>
-<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><pre><code>$(&quot;ul&gt;li&quot;).each(function(index,domEle){
-        if(index%2==0){
-        domEle.style.backgroundColor=&quot;skyblue&quot;;
+        <h2 id="异步的HTTP“请求-响应”模型——XMLHttpRequest"><a href="#异步的HTTP“请求-响应”模型——XMLHttpRequest" class="headerlink" title="异步的HTTP“请求-响应”模型——XMLHttpRequest"></a>异步的HTTP“请求-响应”模型——XMLHttpRequest</h2><p>  当前页面发起一个异步的请求，为了获取服务器端返回的一小段数据(一般都不是完整的HTML页面)，客户端也不会把当前页面内容清除，而是等待着服务器返回数据片段，把这些片段的内容挂载到当前DOM树上。<br>  &nbsp;&nbsp;&nbsp;&nbsp;优点：客户端不会出现一片惨白；服务器端返回的数据量小多了。</p>
+<h2 id="一、原生js使用AJAX的基本步骤："><a href="#一、原生js使用AJAX的基本步骤：" class="headerlink" title="一、原生js使用AJAX的基本步骤："></a>一、原生js使用AJAX的基本步骤：</h2><pre><code>使用AJAX应用的步骤：
+(第一步)
+创建XMLHttpRequest对象——注意IE的兼容性问题
+    var xhr = null ;
+        if(  window.XMLHttpRequest ){   //普通浏览器
+            xhr = new XMLHttpRequest( );        
+        }else{  //老IE浏览器
+            xhr =  new ActiveXObject(&apos;Microsoft.XMLHTTP&apos;);
         }
+(第二步)
+为XHR对象的onreadystatechange句柄绑定监听函数——监听xhr.readyState属性值的改变
+    xhr.onreadystatechange = function(){
+            if(xhr.readyState===4){    //接收了所有的响应数据
+                if(xhr.status===200){
+                    //响应成功，可以处理响应主体数据了...xhr.responseText
+                }else{
+                    //响应已结束，但并不是成功的响应
+                }
+            }
+        }
+
+(第三步)
+使用XHR对象创建一个HTTP请求消息
+    xhr.open(请求方法,  URI,  true);  //请求方法：get、post；true是异步
+(第四步)
+使用XHR对象发送请求消息给服务器
+    xhr.send(null/&apos;k1=v1&amp;k2=v2&apos;);
+
+ 一、使用AJAX发送GET请求
+        (1)创建XHR对象
+        (2)绑定监听函数
+        (3)创建请求消息
+        xhr.open(&apos;GET&apos;, &apos;xxx.php?k1=v1&amp;k2=v2&apos;, true);
+        (4)发送请求消息
+        xhr.send(null);  //HTTP协议规定：GET没有请求主体
+
+二、使用AJAX发送POST请求
+        (1)创建XHR对象
+        (2)绑定监听函数
+        (3)创建请求消息
+        xhr.open(&apos;POST&apos;, &apos;xxx.php&apos;, true);
+        (4)发送请求消息——必须设置Content-Type请求头（因为AJAX POST请求默认使用Content-Type: text/plain发送请求主体数据——PHP服务器是无法接收）
+        xhr.setRequestHeader(&apos;Content-Type&apos;,  &apos;application/x-www-form-urlencoded&apos;);
+        xhr.send(encodeURI(&apos;k1=v1&amp;k2=v2&amp;k3=v3&apos;));//当有中文时需用encodeURI（）
+</code></pre><a id="more"></a>
+<h2 id="二、使用jQuery简化AJAX操作："><a href="#二、使用jQuery简化AJAX操作：" class="headerlink" title="二、使用jQuery简化AJAX操作："></a>二、使用jQuery简化AJAX操作：</h2><pre><code>1.使用$(&apos;...&apos;).load(url,  [data],  [fn])函数//参数可以写成{key:value}  
+  作用：载入远程 HTML 文件代码片段并插入至当前选中的DOM元素中。
+  此方法最大的限制：(1)服务器返回的数据必须是HTML代码片段！(2)且因为底层使用的是（innerHTML=返回值），原有内容都会被清除掉——灵活性不足。
+</code></pre><hr>
+<pre><code>2.使用$.ajax(  )函数
+        使用方法：
+        $.ajax({
+            type:&apos;GET/POST&apos;,
+            url: &apos;xxx.php&apos;,
+            data: &apos;k1=v1&amp;k2=v2&apos;/{k1:v1, k2:v2},
+            dataType: &apos;text/html/script/xml/json/jsonp&apos;
+            async: true,
+            error: function(){   },
+            success: function(){   }
+        });
+</code></pre><hr>
+<pre><code>3.使用$.get()、$.post()、$.getScript()、$.getJSON()方法
+        $.ajax({ 
+            type:  &apos;GET&apos;,
+            url: &apos;...&apos;
+            data:  ...,
+            success: fn
+          })
+          上述方法可以简写为：  $.get(&apos;url&apos;,  data,  fn);//如果没写dataType，会自动获取服务器端的响应头部，
+          根据类型自动解析
+
+        $.ajax({ 
+            type:  &apos;POST&apos;,
+            url: &apos;...&apos;
+            data:  ...,
+            success: fn
+          })
+          上述方法可以简写为：   $.post(&apos;url&apos;,  data,   fn)    
+
+        $.getJSON()是$.ajax({ dataType: &apos;json&apos;})的简写，用于从服务器一段JSON数据，并解析为JS对象。
+
+        $.getScript()是$.ajax({ dataType: &apos;script&apos;})的简写，用于从服务器一段JavaScript脚本，并立即调用eval()函数执行返回的脚本。
+</code></pre><hr>
+<pre><code>4.jQuery对AJAX的支持——表单输入的序列化
+  var stringData = $(&apos;#xxForm&apos;).serialize( );//主要
+  var objData = $(&apos;#xxForm&apos;).serializeArray();
+  表单序列化：把当前选定的表单中所有的输入域的名和值组成一个大的用&amp;符号拼接的字符串，可以直接用于AJAX请求方法。
+</code></pre><h2 id="三、Angular-JS里-http：提供异步的AJAX请求服务"><a href="#三、Angular-JS里-http：提供异步的AJAX请求服务" class="headerlink" title="三、Angular JS里$http：提供异步的AJAX请求服务"></a>三、Angular JS里$http：提供异步的AJAX请求服务</h2><pre><code>1.GET请求
+    .controller(&apos;名称&apos;, function($http){
+        $http.get(&apos;xx.php？k1=v1&amp;k2=v2&apos;).success(fn)
     })
 
-将li中索引值为偶数的颜色变为天蓝（偶数从0开始）
+    例：$http.get(&apos;data/dish.php?kw=&apos;+$scope.kw)
+            .success(function(data){
+
+            });
+
+
+2.POST请求——重点且注意（必须设置请求头部，且用jQuery的param()方法解析data）
+    var data = {k1: v1,  k2:v2 };
+    data = jQuery.param( data );
+    $http.post(
+        &apos;xx.php&apos;,
+        data,
+        { 
+        headers :{&apos;Content-Type&apos;:&apos;application/x-www-form-urlencoded&apos;}     
+        }
+    )
+    .success(fn);
 </code></pre>
       
     </div>
@@ -314,13 +391,13 @@ obj 需要遍历的对象或数组">
   
     
     <div class="copyright">
-        <p><span>Title:</span><a href="/2016/04/24/each/">jQuery中的隐式迭代--each()用法</a></p>
+        <p><span>Title:</span><a href="/2016/05/29/ajax应用/">ajax异步刷新技术</a></p>
         <p><span>Author:</span><a href="/" title="Back to Homepage">jiangBiao</a></p>
-        <p><span>Created:</span>2016-04-24, 11:30:04</p>
-        <p><span>Updated:</span>2016-04-24, 22:10:31</p>
+        <p><span>Created:</span>2016-05-29, 19:45:30</p>
+        <p><span>Updated:</span>2016-05-29, 23:18:06</p>
         <p>
-            <span>Full URL:</span><a class="post-url" href="/2016/04/24/each/" title="jQuery中的隐式迭代--each()用法">http://yoursite.com/2016/04/24/each/</a>
-            <span class="copy-path" data-clipboard-text="From http://yoursite.com/2016/04/24/each/　　By jiangBiao" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
+            <span>Full URL:</span><a class="post-url" href="/2016/05/29/ajax应用/" title="ajax异步刷新技术">http://yoursite.com/2016/05/29/ajax应用/</a>
+            <span class="copy-path" data-clipboard-text="From http://yoursite.com/2016/05/29/ajax应用/　　By jiangBiao" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -332,16 +409,10 @@ obj 需要遍历的对象或数组">
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2016/04/24/jQuery选择器/">
-                    jQuery选择器
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2016/04/15/ready/">
-                    ready()与onload的区别
+                <a href="/2016/05/29/on方法/">
+                    jQuery中on()方法
                 </a>
             </div>
         
@@ -352,7 +423,7 @@ obj 需要遍历的对象或数组">
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">Contents</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#隐式迭代-只关注迭代的开始和结束-不关注迭代过程"><span class="toc-number">1.</span> <span class="toc-text">隐式迭代 - 只关注迭代的开始和结束,不关注迭代过程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#方法"><span class="toc-number">1.1.</span> <span class="toc-text">方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#代码"><span class="toc-number">1.2.</span> <span class="toc-text">代码</span></a></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#异步的HTTP“请求-响应”模型——XMLHttpRequest"><span class="toc-number">1.</span> <span class="toc-text">异步的HTTP“请求-响应”模型——XMLHttpRequest</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#一、原生js使用AJAX的基本步骤："><span class="toc-number">2.</span> <span class="toc-text">一、原生js使用AJAX的基本步骤：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、使用jQuery简化AJAX操作："><span class="toc-number">3.</span> <span class="toc-text">二、使用jQuery简化AJAX操作：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、Angular-JS里-http：提供异步的AJAX请求服务"><span class="toc-number">4.</span> <span class="toc-text">三、Angular JS里$http：提供异步的AJAX请求服务</span></a></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
@@ -409,7 +480,7 @@ obj 需要遍历的对象或数组">
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"jQuery中的隐式迭代--each()用法　| My blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"ajax异步刷新技术　| My blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -430,7 +501,7 @@ obj 需要遍历的对象或数组">
     
       <div class="duoshuo" id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="2016/04/24/each/" data-title="jQuery中的隐式迭代--each()用法" data-url="http://yoursite.com/2016/04/24/each/"></div>
+    <div class="ds-thread" data-thread-key="2016/05/29/ajax应用/" data-title="ajax异步刷新技术" data-url="http://yoursite.com/2016/05/29/ajax应用/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
