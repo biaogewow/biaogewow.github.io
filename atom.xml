@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-05-29T11:36:49.370Z</updated>
+  <updated>2016-05-29T11:39:12.359Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,28 +20,43 @@
     <link href="http://yoursite.com/2016/05/29/on%E6%96%B9%E6%B3%95/"/>
     <id>http://yoursite.com/2016/05/29/on方法/</id>
     <published>2016-05-29T10:36:53.000Z</published>
-    <updated>2016-05-29T11:36:49.370Z</updated>
+    <updated>2016-05-29T11:39:12.359Z</updated>
     
-    <content type="html">&lt;p&gt;##jQuery on()方法使用详解##&lt;/p&gt;
-&lt;p&gt;###jQuery on()方法是官方推荐的绑定事件的一个方法###&lt;/p&gt;
-&lt;p&gt;####$(selector).on(event,childSelector,data,function,map)####&lt;br&gt;    与此相似的有bind() 、live() 、delegate() ，以上三种方法在jQuery1.8之后都不推荐使用，&lt;br&gt;    官方在1.9时已经取消使用live()方法了，所以建议都使用on()方法；&lt;br&gt;    on()则是整合了之前的三种方式的新事件绑定机制。&lt;/p&gt;
-&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;p&gt;##on方法的优势：##&lt;/p&gt;
-&lt;p&gt;###一、多个事件绑定同一个函数&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;$(document).ready(function(){  
+    <content type="html">&lt;h2 id=&quot;jQuery-on-方法使用详解&quot;&gt;&lt;a href=&quot;#jQuery-on-方法使用详解&quot; class=&quot;headerlink&quot; title=&quot;jQuery on()方法使用详解&quot;&gt;&lt;/a&gt;jQuery on()方法使用详解&lt;/h2&gt;&lt;h3 id=&quot;jQuery-on-方法是官方推荐的绑定事件的一个方法&quot;&gt;&lt;a href=&quot;#jQuery-on-方法是官方推荐的绑定事件的一个方法&quot; class=&quot;headerlink&quot; title=&quot;jQuery on()方法是官方推荐的绑定事件的一个方法&quot;&gt;&lt;/a&gt;jQuery on()方法是官方推荐的绑定事件的一个方法&lt;/h3&gt;&lt;h4 id=&quot;selector-on-event-childSelector-data-function-map&quot;&gt;&lt;a href=&quot;#selector-on-event-childSelector-data-function-map&quot; class=&quot;headerlink&quot; title=&quot;$(selector).on(event,childSelector,data,function,map)&quot;&gt;&lt;/a&gt;$(selector).on(event,childSelector,data,function,map)&lt;/h4&gt;&lt;pre&gt;&lt;code&gt;与此相似的有bind() 、live() 、delegate() ，以上三种方法在jQuery1.8之后都不推荐使用，   
+官方在1.9时已经取消使用live()方法了，所以建议都使用on()方法；
+on()则是整合了之前的三种方式的新事件绑定机制。
+&lt;/code&gt;&lt;/pre&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h2 id=&quot;on方法的优势：&quot;&gt;&lt;a href=&quot;#on方法的优势：&quot; class=&quot;headerlink&quot; title=&quot;on方法的优势：&quot;&gt;&lt;/a&gt;on方法的优势：&lt;/h2&gt;&lt;h3 id=&quot;一、多个事件绑定同一个函数&quot;&gt;&lt;a href=&quot;#一、多个事件绑定同一个函数&quot; class=&quot;headerlink&quot; title=&quot;一、多个事件绑定同一个函数&quot;&gt;&lt;/a&gt;一、多个事件绑定同一个函数&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;$(document).ready(function(){  
     $(&amp;quot;p&amp;quot;).on(&amp;quot;mouseover click&amp;quot;,function(){  
       $(this).show();  
    });  
 }); 
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;###二、多个事件绑定不同函数&lt;br&gt;    $(document).ready(function(){&lt;br&gt;          $(“div”).on({&lt;br&gt;               mouseover:function(){$(“body”).css(“background-color”,”red”);},&lt;br&gt;            click:function(){$(“body”).css(“background-color”,”blue”);},&lt;br&gt;            mouseout:function(){$(“body”).css(“background-color”,”yellow”);}&lt;br&gt;              });&lt;br&gt;        });&lt;/p&gt;
-&lt;p&gt;###三、事件监听的委托——这是重点&lt;br&gt;        事件监听的委托，利用的是事件冒泡原理，监听点击事件&lt;br&gt;        可以节约性能，使用on函数有一个优点当就是动态添加新的项目进来的时候也会绑定事件&lt;br&gt;        $(document).ready(function(){&lt;br&gt;            var current = null;&lt;br&gt;            $(‘ul’).on(‘click’,’li’,&lt;br&gt;                function (){&lt;br&gt;                    $(this).css(“background-color”,”blue”); //此时this指代当前点击的li&lt;br&gt;                    current = this;&lt;br&gt;                }&lt;br&gt;            );&lt;br&gt;        });    &lt;/p&gt;
-</content>
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;二、多个事件绑定不同函数&quot;&gt;&lt;a href=&quot;#二、多个事件绑定不同函数&quot; class=&quot;headerlink&quot; title=&quot;二、多个事件绑定不同函数&quot;&gt;&lt;/a&gt;二、多个事件绑定不同函数&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;$(document).ready(function(){
+      $(&amp;quot;div&amp;quot;).on({
+           mouseover:function(){$(&amp;quot;body&amp;quot;).css(&amp;quot;background-color&amp;quot;,&amp;quot;red&amp;quot;);},  
+        click:function(){$(&amp;quot;body&amp;quot;).css(&amp;quot;background-color&amp;quot;,&amp;quot;blue&amp;quot;);}, 
+        mouseout:function(){$(&amp;quot;body&amp;quot;).css(&amp;quot;background-color&amp;quot;,&amp;quot;yellow&amp;quot;);}  
+          });
+    });
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;三、事件监听的委托——这是重点&quot;&gt;&lt;a href=&quot;#三、事件监听的委托——这是重点&quot; class=&quot;headerlink&quot; title=&quot;三、事件监听的委托——这是重点&quot;&gt;&lt;/a&gt;三、事件监听的委托——这是重点&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;事件监听的委托，利用的是事件冒泡原理，监听点击事件
+可以节约性能，使用on函数有一个优点当就是动态添加新的项目进来的时候也会绑定事件
+$(document).ready(function(){ 
+    var current = null;
+    $(&amp;apos;ul&amp;apos;).on(&amp;apos;click&amp;apos;,&amp;apos;li&amp;apos;,
+        function (){
+            $(this).css(&amp;quot;background-color&amp;quot;,&amp;quot;blue&amp;quot;); //此时this指代当前点击的li
+            current = this;
+        }
+    );
+});    
+&lt;/code&gt;&lt;/pre&gt;</content>
     
     <summary type="html">
     
-      &lt;p&gt;##jQuery on()方法使用详解##&lt;/p&gt;
-&lt;p&gt;###jQuery on()方法是官方推荐的绑定事件的一个方法###&lt;/p&gt;
-&lt;p&gt;####$(selector).on(event,childSelector,data,function,map)####&lt;br&gt;    与此相似的有bind() 、live() 、delegate() ，以上三种方法在jQuery1.8之后都不推荐使用，&lt;br&gt;    官方在1.9时已经取消使用live()方法了，所以建议都使用on()方法；&lt;br&gt;    on()则是整合了之前的三种方式的新事件绑定机制。&lt;/p&gt;
+      &lt;h2 id=&quot;jQuery-on-方法使用详解&quot;&gt;&lt;a href=&quot;#jQuery-on-方法使用详解&quot; class=&quot;headerlink&quot; title=&quot;jQuery on()方法使用详解&quot;&gt;&lt;/a&gt;jQuery on()方法使用详解&lt;/h2&gt;&lt;h3 id=&quot;jQuery-on-方法是官方推荐的绑定事件的一个方法&quot;&gt;&lt;a href=&quot;#jQuery-on-方法是官方推荐的绑定事件的一个方法&quot; class=&quot;headerlink&quot; title=&quot;jQuery on()方法是官方推荐的绑定事件的一个方法&quot;&gt;&lt;/a&gt;jQuery on()方法是官方推荐的绑定事件的一个方法&lt;/h3&gt;&lt;h4 id=&quot;selector-on-event-childSelector-data-function-map&quot;&gt;&lt;a href=&quot;#selector-on-event-childSelector-data-function-map&quot; class=&quot;headerlink&quot; title=&quot;$(selector).on(event,childSelector,data,function,map)&quot;&gt;&lt;/a&gt;$(selector).on(event,childSelector,data,function,map)&lt;/h4&gt;&lt;pre&gt;&lt;code&gt;与此相似的有bind() 、live() 、delegate() ，以上三种方法在jQuery1.8之后都不推荐使用，   
+官方在1.9时已经取消使用live()方法了，所以建议都使用on()方法；
+on()则是整合了之前的三种方式的新事件绑定机制。
+&lt;/code&gt;&lt;/pre&gt;
     
     </summary>
     

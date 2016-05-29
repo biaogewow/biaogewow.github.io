@@ -5,22 +5,22 @@
   
   <title>jQuery中on()方法 | My blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="##jQuery on()方法使用详解##
-###jQuery on()方法是官方推荐的绑定事件的一个方法###
-####$(selector).on(event,childSelector,data,function,map)####    与此相似的有bind() 、live() 、delegate() ，以上三种方法在jQuery1.8之后都不推荐使用，    官方在1.9时已经取消使用li">
+  <meta name="description" content="jQuery on()方法使用详解jQuery on()方法是官方推荐的绑定事件的一个方法$(selector).on(event,childSelector,data,function,map)与此相似的有bind() 、live() 、delegate() ，以上三种方法在jQuery1.8之后都不推荐使用，   
+官方在1.9时已经取消使用live()方法了，所以建议都使用on()方法；
+o">
 <meta property="og:type" content="article">
 <meta property="og:title" content="jQuery中on()方法">
 <meta property="og:url" content="http://yoursite.com/2016/05/29/on方法/index.html">
 <meta property="og:site_name" content="My blog">
-<meta property="og:description" content="##jQuery on()方法使用详解##
-###jQuery on()方法是官方推荐的绑定事件的一个方法###
-####$(selector).on(event,childSelector,data,function,map)####    与此相似的有bind() 、live() 、delegate() ，以上三种方法在jQuery1.8之后都不推荐使用，    官方在1.9时已经取消使用li">
-<meta property="og:updated_time" content="2016-05-29T11:36:49.370Z">
+<meta property="og:description" content="jQuery on()方法使用详解jQuery on()方法是官方推荐的绑定事件的一个方法$(selector).on(event,childSelector,data,function,map)与此相似的有bind() 、live() 、delegate() ，以上三种方法在jQuery1.8之后都不推荐使用，   
+官方在1.9时已经取消使用live()方法了，所以建议都使用on()方法；
+o">
+<meta property="og:updated_time" content="2016-05-29T11:39:12.359Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="jQuery中on()方法">
-<meta name="twitter:description" content="##jQuery on()方法使用详解##
-###jQuery on()方法是官方推荐的绑定事件的一个方法###
-####$(selector).on(event,childSelector,data,function,map)####    与此相似的有bind() 、live() 、delegate() ，以上三种方法在jQuery1.8之后都不推荐使用，    官方在1.9时已经取消使用li">
+<meta name="twitter:description" content="jQuery on()方法使用详解jQuery on()方法是官方推荐的绑定事件的一个方法$(selector).on(event,childSelector,data,function,map)与此相似的有bind() 、live() 、delegate() ，以上三种方法在jQuery1.8之后都不推荐使用，   
+官方在1.9时已经取消使用live()方法了，所以建议都使用on()方法；
+o">
   
     <link rel="alternative" href="/atom.xml" title="My blog" type="application/atom+xml">
   
@@ -276,20 +276,34 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>##jQuery on()方法使用详解##</p>
-<p>###jQuery on()方法是官方推荐的绑定事件的一个方法###</p>
-<p>####$(selector).on(event,childSelector,data,function,map)####<br>    与此相似的有bind() 、live() 、delegate() ，以上三种方法在jQuery1.8之后都不推荐使用，<br>    官方在1.9时已经取消使用live()方法了，所以建议都使用on()方法；<br>    on()则是整合了之前的三种方式的新事件绑定机制。</p>
-<a id="more"></a>
-<p>##on方法的优势：##</p>
-<p>###一、多个事件绑定同一个函数</p>
-<pre><code>$(document).ready(function(){  
+        <h2 id="jQuery-on-方法使用详解"><a href="#jQuery-on-方法使用详解" class="headerlink" title="jQuery on()方法使用详解"></a>jQuery on()方法使用详解</h2><h3 id="jQuery-on-方法是官方推荐的绑定事件的一个方法"><a href="#jQuery-on-方法是官方推荐的绑定事件的一个方法" class="headerlink" title="jQuery on()方法是官方推荐的绑定事件的一个方法"></a>jQuery on()方法是官方推荐的绑定事件的一个方法</h3><h4 id="selector-on-event-childSelector-data-function-map"><a href="#selector-on-event-childSelector-data-function-map" class="headerlink" title="$(selector).on(event,childSelector,data,function,map)"></a>$(selector).on(event,childSelector,data,function,map)</h4><pre><code>与此相似的有bind() 、live() 、delegate() ，以上三种方法在jQuery1.8之后都不推荐使用，   
+官方在1.9时已经取消使用live()方法了，所以建议都使用on()方法；
+on()则是整合了之前的三种方式的新事件绑定机制。
+</code></pre><a id="more"></a>
+<h2 id="on方法的优势："><a href="#on方法的优势：" class="headerlink" title="on方法的优势："></a>on方法的优势：</h2><h3 id="一、多个事件绑定同一个函数"><a href="#一、多个事件绑定同一个函数" class="headerlink" title="一、多个事件绑定同一个函数"></a>一、多个事件绑定同一个函数</h3><pre><code>$(document).ready(function(){  
     $(&quot;p&quot;).on(&quot;mouseover click&quot;,function(){  
       $(this).show();  
    });  
 }); 
-</code></pre><p>###二、多个事件绑定不同函数<br>    $(document).ready(function(){<br>          $(“div”).on({<br>               mouseover:function(){$(“body”).css(“background-color”,”red”);},<br>            click:function(){$(“body”).css(“background-color”,”blue”);},<br>            mouseout:function(){$(“body”).css(“background-color”,”yellow”);}<br>              });<br>        });</p>
-<p>###三、事件监听的委托——这是重点<br>        事件监听的委托，利用的是事件冒泡原理，监听点击事件<br>        可以节约性能，使用on函数有一个优点当就是动态添加新的项目进来的时候也会绑定事件<br>        $(document).ready(function(){<br>            var current = null;<br>            $(‘ul’).on(‘click’,’li’,<br>                function (){<br>                    $(this).css(“background-color”,”blue”); //此时this指代当前点击的li<br>                    current = this;<br>                }<br>            );<br>        });    </p>
-
+</code></pre><h3 id="二、多个事件绑定不同函数"><a href="#二、多个事件绑定不同函数" class="headerlink" title="二、多个事件绑定不同函数"></a>二、多个事件绑定不同函数</h3><pre><code>$(document).ready(function(){
+      $(&quot;div&quot;).on({
+           mouseover:function(){$(&quot;body&quot;).css(&quot;background-color&quot;,&quot;red&quot;);},  
+        click:function(){$(&quot;body&quot;).css(&quot;background-color&quot;,&quot;blue&quot;);}, 
+        mouseout:function(){$(&quot;body&quot;).css(&quot;background-color&quot;,&quot;yellow&quot;);}  
+          });
+    });
+</code></pre><h3 id="三、事件监听的委托——这是重点"><a href="#三、事件监听的委托——这是重点" class="headerlink" title="三、事件监听的委托——这是重点"></a>三、事件监听的委托——这是重点</h3><pre><code>事件监听的委托，利用的是事件冒泡原理，监听点击事件
+可以节约性能，使用on函数有一个优点当就是动态添加新的项目进来的时候也会绑定事件
+$(document).ready(function(){ 
+    var current = null;
+    $(&apos;ul&apos;).on(&apos;click&apos;,&apos;li&apos;,
+        function (){
+            $(this).css(&quot;background-color&quot;,&quot;blue&quot;); //此时this指代当前点击的li
+            current = this;
+        }
+    );
+});    
+</code></pre>
       
     </div>
     
@@ -300,7 +314,7 @@
         <p><span>Title:</span><a href="/2016/05/29/on方法/">jQuery中on()方法</a></p>
         <p><span>Author:</span><a href="/" title="Back to Homepage">jiangBiao</a></p>
         <p><span>Created:</span>2016-05-29, 18:36:53</p>
-        <p><span>Updated:</span>2016-05-29, 19:36:49</p>
+        <p><span>Updated:</span>2016-05-29, 19:39:12</p>
         <p>
             <span>Full URL:</span><a class="post-url" href="/2016/05/29/on方法/" title="jQuery中on()方法">http://yoursite.com/2016/05/29/on方法/</a>
             <span class="copy-path" data-clipboard-text="From http://yoursite.com/2016/05/29/on方法/　　By jiangBiao" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
@@ -329,7 +343,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">Contents</strong>
-    
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#jQuery-on-方法使用详解"><span class="toc-number">1.</span> <span class="toc-text">jQuery on()方法使用详解</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#jQuery-on-方法是官方推荐的绑定事件的一个方法"><span class="toc-number">1.1.</span> <span class="toc-text">jQuery on()方法是官方推荐的绑定事件的一个方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#selector-on-event-childSelector-data-function-map"><span class="toc-number">1.1.1.</span> <span class="toc-text">$(selector).on(event,childSelector,data,function,map)</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#on方法的优势："><span class="toc-number">2.</span> <span class="toc-text">on方法的优势：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#一、多个事件绑定同一个函数"><span class="toc-number">2.1.</span> <span class="toc-text">一、多个事件绑定同一个函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二、多个事件绑定不同函数"><span class="toc-number">2.2.</span> <span class="toc-text">二、多个事件绑定不同函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三、事件监听的委托——这是重点"><span class="toc-number">2.3.</span> <span class="toc-text">三、事件监听的委托——这是重点</span></a></li></ol></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
