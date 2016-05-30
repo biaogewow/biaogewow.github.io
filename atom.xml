@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-05-29T15:18:06.302Z</updated>
+  <updated>2016-05-30T11:37:47.307Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,93 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>利用JSONP解决跨域问题</title>
+    <link href="http://yoursite.com/2016/05/30/JSONP%E8%AF%A6%E8%A7%A3/"/>
+    <id>http://yoursite.com/2016/05/30/JSONP详解/</id>
+    <published>2016-05-30T10:37:18.000Z</published>
+    <updated>2016-05-30T11:37:47.307Z</updated>
+    
+    <content type="html">&lt;h2 id=&quot;利用JSONP解决跨域问题&quot;&gt;&lt;a href=&quot;#利用JSONP解决跨域问题&quot; class=&quot;headerlink&quot; title=&quot;利用JSONP解决跨域问题&quot;&gt;&lt;/a&gt;利用JSONP解决跨域问题&lt;/h2&gt;&lt;h4 id=&quot;什么是跨域？&quot;&gt;&lt;a href=&quot;#什么是跨域？&quot; class=&quot;headerlink&quot; title=&quot;什么是跨域？&quot;&gt;&lt;/a&gt;什么是跨域？&lt;/h4&gt;&lt;p&gt;概念：由于浏览器同源策略，凡是发送请求url的协议、域名、端口三者之间任意一与当前页面地址不同即为跨域。 &lt;/p&gt;
+&lt;p&gt;例：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;URL                      说明       是否允许通信
+http://www.a.com/a.js
+http://www.a.com/b.js     同一域名下   允许
+http://www.a.com/lab/a.js
+http://www.a.com/script/b.js 同一域名下不同文件夹 允许
+http://www.a.com:8000/a.js
+http://www.a.com/b.js     同一域名，不同端口  不允许
+http://www.a.com/a.js
+https://www.a.com/b.js 同一域名，不同协议 不允许
+http://www.a.com/a.js
+http://70.32.92.74/b.js 域名和域名对应ip 不允许
+http://www.a.com/a.js
+http://script.a.com/b.js 主域相同，子域不同 不允许
+http://www.a.com/a.js
+http://a.com/b.js 同一域名，不同二级域名（同上） 不允许（cookie这种情况下也不允许访问）
+http://www.cnblogs.com/a.js
+http://www.a.com/b.js 不同域名 不允许
+&lt;/code&gt;&lt;/pre&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h4 id=&quot;解决：通过jsonp跨域&quot;&gt;&lt;a href=&quot;#解决：通过jsonp跨域&quot; class=&quot;headerlink&quot; title=&quot;解决：通过jsonp跨域&quot;&gt;&lt;/a&gt;解决：通过jsonp跨域&lt;/h4&gt;&lt;p&gt;JSONP 是 JSON 的一种“使用模式；&lt;br&gt;JSONP由两部分组成：回调函数和数据。回调函数是当响应到来时应该在页面中调用的函数，而数据就是传入回调函数中的JSON数据。  &lt;/p&gt;
+&lt;p&gt;在js中，我们直接用XMLHttpRequest请求不同域上的数据时，是不可以的。但是，在页面上引入不同域上的js脚本文件却是可以的，jsonp正是利用这个特性来实现的。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;例如：有个a.html页面，它里面的代码需要利用ajax获取一个不同域上的json数据，  假设这个json数据地址
+是http://example.com/data.php,那么a.html中的代码就可以这样
+
+&amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt;
+function dosomething(jsondata){
+    //处理获得的json数据
+}
+&amp;lt;/script&amp;gt;
+&amp;lt;script src=&amp;quot;http://example.com/data.php?callback=dosomething&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;js文件载入成功后会执行我们在url参数中指定的函数，并且会把我们需要的json数据作为参数传入。所以jsonp是需要服务器端的页面进行相应的配合的。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;?php
+$callback = $_GET[&amp;apos;callback&amp;apos;];//得到回调函数名
+$data = array(&amp;apos;a&amp;apos;,&amp;apos;b&amp;apos;,&amp;apos;c&amp;apos;);//要返回的数据
+echo $callback.&amp;apos;(&amp;apos;.json_encode($data).&amp;apos;)&amp;apos;;//输出
+?&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;最终，输出结果为：dosomething([‘a’,’b’,’c’]);&lt;/p&gt;
+&lt;h4 id=&quot;总结：客户端给服务器传送一个函数名，服务器将这函数名与数据拼接成一个大的字符串，再反传给客户端，客户端用eval-执行这个字符串，相当于调用了客户端已有的函数，参数是服务器端返回来的，这种使用JSON的方法就叫JSONP。&quot;&gt;&lt;a href=&quot;#总结：客户端给服务器传送一个函数名，服务器将这函数名与数据拼接成一个大的字符串，再反传给客户端，客户端用eval-执行这个字符串，相当于调用了客户端已有的函数，参数是服务器端返回来的，这种使用JSON的方法就叫JSONP。&quot; class=&quot;headerlink&quot; title=&quot;总结：客户端给服务器传送一个函数名，服务器将这函数名与数据拼接成一个大的字符串，再反传给客户端，客户端用eval()执行这个字符串，相当于调用了客户端已有的函数，参数是服务器端返回来的，这种使用JSON的方法就叫JSONP。&quot;&gt;&lt;/a&gt;总结：客户端给服务器传送一个函数名，服务器将这函数名与数据拼接成一个大的字符串，再反传给客户端，客户端用eval()执行这个字符串，相当于调用了客户端已有的函数，参数是服务器端返回来的，这种使用JSON的方法就叫JSONP。&lt;/h4&gt;&lt;p&gt;如果你的页面使用jquery，那么通过它封装的方法就能很方便的来进行jsonp操作了&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt;
+    $.getJSON(&amp;apos;http://example.com/data.php?callback=?&amp;apos;,function(jsondata){
+        //处理获得的json数据
+    });
+&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;jquery会自动生成一个全局函数来替换callback=?中的问号，之后获取到数据后又会自动销毁，实际上就是起一个临时代理函数的作用。$.getJSON方法会自动判断是否跨域，不跨域的话，就调用普通的ajax方法；跨域的话，则会以异步加载js文件的形式来调用jsonp的回调函数。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;摘自博客园&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;利用JSONP解决跨域问题&quot;&gt;&lt;a href=&quot;#利用JSONP解决跨域问题&quot; class=&quot;headerlink&quot; title=&quot;利用JSONP解决跨域问题&quot;&gt;&lt;/a&gt;利用JSONP解决跨域问题&lt;/h2&gt;&lt;h4 id=&quot;什么是跨域？&quot;&gt;&lt;a href=&quot;#什么是跨域？&quot; class=&quot;headerlink&quot; title=&quot;什么是跨域？&quot;&gt;&lt;/a&gt;什么是跨域？&lt;/h4&gt;&lt;p&gt;概念：由于浏览器同源策略，凡是发送请求url的协议、域名、端口三者之间任意一与当前页面地址不同即为跨域。 &lt;/p&gt;
+&lt;p&gt;例：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;URL                      说明       是否允许通信
+http://www.a.com/a.js
+http://www.a.com/b.js     同一域名下   允许
+http://www.a.com/lab/a.js
+http://www.a.com/script/b.js 同一域名下不同文件夹 允许
+http://www.a.com:8000/a.js
+http://www.a.com/b.js     同一域名，不同端口  不允许
+http://www.a.com/a.js
+https://www.a.com/b.js 同一域名，不同协议 不允许
+http://www.a.com/a.js
+http://70.32.92.74/b.js 域名和域名对应ip 不允许
+http://www.a.com/a.js
+http://script.a.com/b.js 主域相同，子域不同 不允许
+http://www.a.com/a.js
+http://a.com/b.js 同一域名，不同二级域名（同上） 不允许（cookie这种情况下也不允许访问）
+http://www.cnblogs.com/a.js
+http://www.a.com/b.js 不同域名 不允许
+&lt;/code&gt;&lt;/pre&gt;
+    
+    </summary>
+    
+    
+      <category term="js跨域" scheme="http://yoursite.com/tags/js%E8%B7%A8%E5%9F%9F/"/>
+    
+  </entry>
   
   <entry>
     <title>ajax异步刷新技术</title>
@@ -384,13 +471,13 @@ on()则是整合了之前的三种方式的新事件绑定机制。
     <link href="http://yoursite.com/2016/04/15/ready/"/>
     <id>http://yoursite.com/2016/04/15/ready/</id>
     <published>2016-04-15T14:12:38.586Z</published>
-    <updated>2016-04-24T14:09:47.048Z</updated>
+    <updated>2016-05-30T10:46:38.806Z</updated>
     
     <content type="html">&lt;h3 id=&quot;1-onload没有简写形式-ready具有简写形式，简写形式如下&quot;&gt;&lt;a href=&quot;#1-onload没有简写形式-ready具有简写形式，简写形式如下&quot; class=&quot;headerlink&quot; title=&quot;1.onload没有简写形式,ready具有简写形式，简写形式如下:&quot;&gt;&lt;/a&gt;1.onload没有简写形式,ready具有简写形式，简写形式如下:&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;$(document).ready(function(){})   
 $().ready(function(){}) 
 $(function(){})
 &lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;2-nbsp-onload必须等待HTML页面中所有内部都加载完毕后才执行；ready是等待DOM节点树的内容加载完毕后就执行&quot;&gt;&lt;a href=&quot;#2-nbsp-onload必须等待HTML页面中所有内部都加载完毕后才执行；ready是等待DOM节点树的内容加载完毕后就执行&quot; class=&quot;headerlink&quot; title=&quot;2.&amp;nbsp;onload必须等待HTML页面中所有内部都加载完毕后才执行；ready是等待DOM节点树的内容加载完毕后就执行&quot;&gt;&lt;/a&gt;2.&amp;nbsp;onload必须等待HTML页面中所有内部都加载完毕后才执行；ready是等待DOM节点树的内容加载完毕后就执行&lt;/h3&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;h3 id=&quot;3-nbsp-一个HTML页面只能编写一个onload；但是一个HTML页面允许编写多个ready&quot;&gt;&lt;a href=&quot;#3-nbsp-一个HTML页面只能编写一个onload；但是一个HTML页面允许编写多个ready&quot; class=&quot;headerlink&quot; title=&quot;3.&amp;nbsp;一个HTML页面只能编写一个onload；但是一个HTML页面允许编写多个ready&quot;&gt;&lt;/a&gt;3.&amp;nbsp;一个HTML页面只能编写一个onload；但是一个HTML页面允许编写多个ready&lt;/h3&gt;&lt;h3 id=&quot;注：可以利用此制作页面加载转圈效果&quot;&gt;&lt;a href=&quot;#注：可以利用此制作页面加载转圈效果&quot; class=&quot;headerlink&quot; title=&quot;注：可以利用此制作页面加载转圈效果&quot;&gt;&lt;/a&gt;注：可以利用此制作页面加载转圈效果&lt;/h3&gt;</content>
+&lt;h3 id=&quot;3-nbsp-一个HTML页面只能编写一个onload；但是一个HTML页面允许编写多个ready&quot;&gt;&lt;a href=&quot;#3-nbsp-一个HTML页面只能编写一个onload；但是一个HTML页面允许编写多个ready&quot; class=&quot;headerlink&quot; title=&quot;3.&amp;nbsp;一个HTML页面只能编写一个onload；但是一个HTML页面允许编写多个ready&quot;&gt;&lt;/a&gt;3.&amp;nbsp;一个HTML页面只能编写一个onload；但是一个HTML页面允许编写多个ready&lt;/h3&gt;</content>
     
     <summary type="html">
     

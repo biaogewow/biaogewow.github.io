@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2016/05/30/JSONP%E8%AF%A6%E8%A7%A3/</loc>
+    
+    <lastmod>2016-05-30T11:37:47.307Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/04/15/ready/</loc>
+    
+    <lastmod>2016-05-30T10:46:38.806Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2016/05/29/ajax%E5%BA%94%E7%94%A8/</loc>
     
     <lastmod>2016-05-29T15:18:06.302Z</lastmod>
@@ -26,13 +40,6 @@
     <loc>http://yoursite.com/2016/04/24/jQuery%E9%80%89%E6%8B%A9%E5%99%A8/</loc>
     
     <lastmod>2016-04-24T14:10:17.965Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2016/04/15/ready/</loc>
-    
-    <lastmod>2016-04-24T14:09:47.048Z</lastmod>
     
   </url>
   
