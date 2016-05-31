@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-05-30T11:37:47.307Z</updated>
+  <updated>2016-05-31T14:25:44.525Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,72 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>变量声明提前</title>
+    <link href="http://yoursite.com/2016/05/31/%E5%8F%98%E9%87%8F%E5%A3%B0%E6%98%8E%E6%8F%90%E5%89%8D/"/>
+    <id>http://yoursite.com/2016/05/31/变量声明提前/</id>
+    <published>2016-05-31T13:36:36.000Z</published>
+    <updated>2016-05-31T14:25:44.525Z</updated>
+    
+    <content type="html">&lt;h2 id=&quot;JS中对变量和函数声明的提前&quot;&gt;&lt;a href=&quot;#JS中对变量和函数声明的提前&quot; class=&quot;headerlink&quot; title=&quot;JS中对变量和函数声明的提前&quot;&gt;&lt;/a&gt;JS中对变量和函数声明的提前&lt;/h2&gt;&lt;h3 id=&quot;一、变量声明“被提前”&quot;&gt;&lt;a href=&quot;#一、变量声明“被提前”&quot; class=&quot;headerlink&quot; title=&quot;一、变量声明“被提前”&quot;&gt;&lt;/a&gt;一、变量声明“被提前”&lt;/h3&gt;&lt;p&gt; 在JS中，JavaScript解析器会将当前作用域内声明的所有变量和函数都会放到作用域的开始处，但是，只有变量的声明被提前到作用域的开始处了，而赋值操作被保留在原处。&lt;/p&gt;
+&lt;p&gt;首先看一段代码，如下：  &lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;(function() {
+  console.log(a);// Uncaught ReferenceError: a is not defined
+})();
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;运行上面代码会报错，因为 a 变量根本就没有定义过！&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;再来看看下面的代码：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;(function() {
+  console.log(a); //undefined
+  var a = &amp;quot;hello world!&amp;quot;;
+  console.log(a);//hello world!
+})();
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;首先，上面这段代码是正确的，没有任何问题。但是，为什么不报错？为什么居然输出的是 undefined？如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;(function() {
+
+    var a;//声明被提前到作用域开始处了！
+
+    console.log(a); 
+
+     a = &amp;quot;hello world!&amp;quot;;//赋值操作还在原地!
+
+    console.log(a);
+})();
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;这就是为什么上述代码不报异常的原因！变量和函数经过“被提前”之后，a 变量其实就被放在了调用函数的前面，根据 JavaScript 语法的定义，已声明而未被赋值的变量会被自动赋值为 undefined ，所以，第一次打印 a 变量的值就是 undefined，后面我们对 a 变量进行了赋值操作，所以，第二次再打印变量就会输出”hello world!”。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&quot;二、函数声明“被提前”&quot;&gt;&lt;a href=&quot;#二、函数声明“被提前”&quot; class=&quot;headerlink&quot; title=&quot;二、函数声明“被提前”&quot;&gt;&lt;/a&gt;二、函数声明“被提前”&lt;/h3&gt;&lt;p&gt;前边说的是变量，接下来我们说说函数。函数的“被提前”还要分两种情况，一种是函数声明，第二种是函数作为值赋值给变量。  &lt;/p&gt;
+&lt;h4 id=&quot;情况一：&quot;&gt;&lt;a href=&quot;#情况一：&quot; class=&quot;headerlink&quot; title=&quot;情况一：&quot;&gt;&lt;/a&gt;情况一：&lt;/h4&gt;&lt;pre&gt;&lt;code&gt;a();//&amp;quot;hello world!&amp;quot;
+function a() {  
+    console.log(&amp;quot;hello world!&amp;quot;);
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;如上所示，JavaScript 解释器允许你在函数声明之前使用，也就是说，函数声明并不仅仅是函数名“被提前”了，整个函数的定义也“被提前”了！所以上述代码能够正确执行。&lt;/p&gt;
+&lt;h4 id=&quot;情况二：&quot;&gt;&lt;a href=&quot;#情况二：&quot; class=&quot;headerlink&quot; title=&quot;情况二：&quot;&gt;&lt;/a&gt;情况二：&lt;/h4&gt;&lt;pre&gt;&lt;code&gt;a();//这是a
+
+b();//Uncaught TypeError: b is not a function
+
+function a() {  
+    console.log(&amp;quot;这是a&amp;quot;);
+}
+
+var b = function () {  
+    console.log(&amp;quot;这是b&amp;quot;);
+};
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;我们做了一个对比，a 函数被妥妥的执行了，符合第一种类型；b 变量“被提前”了，但是他的赋值（也就是函数）并没有被提前，从这一点上来说，和前面我们所讲的变量“被提前”是完全一致的，并且，由于“被提前”的变量的默认值是 undefined ，所以报的错误属于“类型不匹配”，因为 undefined 不是函数，所以不能被调用。&lt;/p&gt;
+&lt;h3 id=&quot;总结&quot;&gt;&lt;a href=&quot;#总结&quot; class=&quot;headerlink&quot; title=&quot;总结&quot;&gt;&lt;/a&gt;总结&lt;/h3&gt;&lt;p&gt;1.变量的声明被提前到作用域顶部，赋值保留在原地&lt;br&gt;2.函数声明整个“被提前”&lt;br&gt;3.函数作为值赋给变量时只有变量“被提前”了，函数没有“被提前”  &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;作为最佳实践：变量声明一定要放在作用域/函数的最上方！&lt;/strong&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;JS中对变量和函数声明的提前&quot;&gt;&lt;a href=&quot;#JS中对变量和函数声明的提前&quot; class=&quot;headerlink&quot; title=&quot;JS中对变量和函数声明的提前&quot;&gt;&lt;/a&gt;JS中对变量和函数声明的提前&lt;/h2&gt;&lt;h3 id=&quot;一、变量声明“被提前”&quot;&gt;&lt;a h
+    
+    </summary>
+    
+    
+      <category term="hoist" scheme="http://yoursite.com/tags/hoist/"/>
+    
+  </entry>
   
   <entry>
     <title>利用JSONP解决跨域问题</title>
