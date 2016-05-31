@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-05-31T14:25:44.525Z</updated>
+  <updated>2016-05-31T14:27:57.578Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,13 +16,13 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>变量声明提前</title>
+    <title>JS中对变量和函数声明的提前</title>
     <link href="http://yoursite.com/2016/05/31/%E5%8F%98%E9%87%8F%E5%A3%B0%E6%98%8E%E6%8F%90%E5%89%8D/"/>
     <id>http://yoursite.com/2016/05/31/变量声明提前/</id>
     <published>2016-05-31T13:36:36.000Z</published>
-    <updated>2016-05-31T14:25:44.525Z</updated>
+    <updated>2016-05-31T14:27:57.578Z</updated>
     
-    <content type="html">&lt;h2 id=&quot;JS中对变量和函数声明的提前&quot;&gt;&lt;a href=&quot;#JS中对变量和函数声明的提前&quot; class=&quot;headerlink&quot; title=&quot;JS中对变量和函数声明的提前&quot;&gt;&lt;/a&gt;JS中对变量和函数声明的提前&lt;/h2&gt;&lt;h3 id=&quot;一、变量声明“被提前”&quot;&gt;&lt;a href=&quot;#一、变量声明“被提前”&quot; class=&quot;headerlink&quot; title=&quot;一、变量声明“被提前”&quot;&gt;&lt;/a&gt;一、变量声明“被提前”&lt;/h3&gt;&lt;p&gt; 在JS中，JavaScript解析器会将当前作用域内声明的所有变量和函数都会放到作用域的开始处，但是，只有变量的声明被提前到作用域的开始处了，而赋值操作被保留在原处。&lt;/p&gt;
+    <content type="html">&lt;h2 id=&quot;JS中对变量和函数声明的提前&quot;&gt;&lt;a href=&quot;#JS中对变量和函数声明的提前&quot; class=&quot;headerlink&quot; title=&quot;JS中对变量和函数声明的提前&quot;&gt;&lt;/a&gt;JS中对变量和函数声明的提前&lt;/h2&gt;&lt;h3 id=&quot;一、变量声明“被提前”&quot;&gt;&lt;a href=&quot;#一、变量声明“被提前”&quot; class=&quot;headerlink&quot; title=&quot;一、变量声明“被提前”&quot;&gt;&lt;/a&gt;一、变量声明“被提前”&lt;/h3&gt;&lt;p&gt; 在JS中，JavaScript解析器会将当前作用域内声明的所有变量和函数都会放到作用域的开始处，但是，只有变量的声明被提前到作用域的开始处了，而赋值操作被保留在原处。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;首先看一段代码，如下：  &lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;(function() {
   console.log(a);// Uncaught ReferenceError: a is not defined
@@ -72,7 +72,7 @@ var b = function () {
     
     <summary type="html">
     
-      &lt;h2 id=&quot;JS中对变量和函数声明的提前&quot;&gt;&lt;a href=&quot;#JS中对变量和函数声明的提前&quot; class=&quot;headerlink&quot; title=&quot;JS中对变量和函数声明的提前&quot;&gt;&lt;/a&gt;JS中对变量和函数声明的提前&lt;/h2&gt;&lt;h3 id=&quot;一、变量声明“被提前”&quot;&gt;&lt;a h
+      &lt;h2 id=&quot;JS中对变量和函数声明的提前&quot;&gt;&lt;a href=&quot;#JS中对变量和函数声明的提前&quot; class=&quot;headerlink&quot; title=&quot;JS中对变量和函数声明的提前&quot;&gt;&lt;/a&gt;JS中对变量和函数声明的提前&lt;/h2&gt;&lt;h3 id=&quot;一、变量声明“被提前”&quot;&gt;&lt;a href=&quot;#一、变量声明“被提前”&quot; class=&quot;headerlink&quot; title=&quot;一、变量声明“被提前”&quot;&gt;&lt;/a&gt;一、变量声明“被提前”&lt;/h3&gt;&lt;p&gt; 在JS中，JavaScript解析器会将当前作用域内声明的所有变量和函数都会放到作用域的开始处，但是，只有变量的声明被提前到作用域的开始处了，而赋值操作被保留在原处。&lt;br&gt;
     
     </summary>
     
